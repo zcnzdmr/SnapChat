@@ -63,15 +63,22 @@ class CustomTextField: UITextField {
         self.autocorrectionType = .no
         self.returnKeyType = .done
         
-        if authFieldType == .username {
+        switch authFieldType {
+            
+        case .username:
+            
             self.placeholder = "  username or email"
             self.keyboardType = .emailAddress
             self.textContentType = .emailAddress
             
-        }
-        
-        
-        if authFieldType == .password {
+        case .email:
+            
+            self.placeholder = "  username or email"
+            self.keyboardType = .emailAddress
+            self.textContentType = .emailAddress
+            
+        case .password:
+            
             self.placeholder = "  password"
             self.isSecureTextEntry = true
             self.textContentType = .oneTimeCode
