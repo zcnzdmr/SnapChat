@@ -9,21 +9,31 @@
 /* Begin PBXBuildFile section */
 		9ADAE6712C5688ED00D6B7E9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9ADAE6702C5688ED00D6B7E9 /* AppDelegate.swift */; };
 		9ADAE6732C5688ED00D6B7E9 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9ADAE6722C5688ED00D6B7E9 /* SceneDelegate.swift */; };
-		9ADAE6752C5688ED00D6B7E9 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9ADAE6742C5688ED00D6B7E9 /* ViewController.swift */; };
-		9ADAE6782C5688ED00D6B7E9 /* Base in Resources */ = {isa = PBXBuildFile; fileRef = 9ADAE6772C5688ED00D6B7E9 /* Base */; };
+		9ADAE6752C5688ED00D6B7E9 /* HomePage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9ADAE6742C5688ED00D6B7E9 /* HomePage.swift */; };
 		9ADAE67A2C5688EE00D6B7E9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9ADAE6792C5688EE00D6B7E9 /* Assets.xcassets */; };
 		9ADAE67D2C5688EE00D6B7E9 /* Base in Resources */ = {isa = PBXBuildFile; fileRef = 9ADAE67C2C5688EE00D6B7E9 /* Base */; };
+		9ADAE6852C5689F700D6B7E9 /* SignInVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9ADAE6842C5689F700D6B7E9 /* SignInVC.swift */; };
+		9ADAE6872C568A9500D6B7E9 /* SignUpVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9ADAE6862C568A9500D6B7E9 /* SignUpVC.swift */; };
+		9ADAE68A2C568B2000D6B7E9 /* CustomTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9ADAE6892C568B2000D6B7E9 /* CustomTextField.swift */; };
+		9ADAE68C2C568B3300D6B7E9 /* CustomButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9ADAE68B2C568B3300D6B7E9 /* CustomButton.swift */; };
+		9ADAE68E2C568CF800D6B7E9 /* ForgotVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9ADAE68D2C568CF800D6B7E9 /* ForgotVC.swift */; };
+		9ADAE6902C568DD900D6B7E9 /* AuthHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9ADAE68F2C568DD900D6B7E9 /* AuthHeaderView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		9ADAE66D2C5688ED00D6B7E9 /* SnapChat.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SnapChat.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9ADAE6702C5688ED00D6B7E9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		9ADAE6722C5688ED00D6B7E9 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		9ADAE6742C5688ED00D6B7E9 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		9ADAE6772C5688ED00D6B7E9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		9ADAE6742C5688ED00D6B7E9 /* HomePage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomePage.swift; sourceTree = "<group>"; };
 		9ADAE6792C5688EE00D6B7E9 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		9ADAE67C2C5688EE00D6B7E9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		9ADAE67E2C5688EE00D6B7E9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		9ADAE6842C5689F700D6B7E9 /* SignInVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInVC.swift; sourceTree = "<group>"; };
+		9ADAE6862C568A9500D6B7E9 /* SignUpVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpVC.swift; sourceTree = "<group>"; };
+		9ADAE6892C568B2000D6B7E9 /* CustomTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTextField.swift; sourceTree = "<group>"; };
+		9ADAE68B2C568B3300D6B7E9 /* CustomButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomButton.swift; sourceTree = "<group>"; };
+		9ADAE68D2C568CF800D6B7E9 /* ForgotVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgotVC.swift; sourceTree = "<group>"; };
+		9ADAE68F2C568DD900D6B7E9 /* AuthHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthHeaderView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,13 +68,26 @@
 			children = (
 				9ADAE6702C5688ED00D6B7E9 /* AppDelegate.swift */,
 				9ADAE6722C5688ED00D6B7E9 /* SceneDelegate.swift */,
-				9ADAE6742C5688ED00D6B7E9 /* ViewController.swift */,
-				9ADAE6762C5688ED00D6B7E9 /* Main.storyboard */,
+				9ADAE6742C5688ED00D6B7E9 /* HomePage.swift */,
+				9ADAE6842C5689F700D6B7E9 /* SignInVC.swift */,
+				9ADAE6862C568A9500D6B7E9 /* SignUpVC.swift */,
+				9ADAE68D2C568CF800D6B7E9 /* ForgotVC.swift */,
+				9ADAE6882C568AD100D6B7E9 /* Views */,
 				9ADAE6792C5688EE00D6B7E9 /* Assets.xcassets */,
 				9ADAE67B2C5688EE00D6B7E9 /* LaunchScreen.storyboard */,
 				9ADAE67E2C5688EE00D6B7E9 /* Info.plist */,
 			);
 			path = SnapChat;
+			sourceTree = "<group>";
+		};
+		9ADAE6882C568AD100D6B7E9 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				9ADAE6892C568B2000D6B7E9 /* CustomTextField.swift */,
+				9ADAE68F2C568DD900D6B7E9 /* AuthHeaderView.swift */,
+				9ADAE68B2C568B3300D6B7E9 /* CustomButton.swift */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -127,7 +150,6 @@
 			files = (
 				9ADAE67A2C5688EE00D6B7E9 /* Assets.xcassets in Resources */,
 				9ADAE67D2C5688EE00D6B7E9 /* Base in Resources */,
-				9ADAE6782C5688ED00D6B7E9 /* Base in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -138,8 +160,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9ADAE6752C5688ED00D6B7E9 /* ViewController.swift in Sources */,
+				9ADAE6752C5688ED00D6B7E9 /* HomePage.swift in Sources */,
 				9ADAE6712C5688ED00D6B7E9 /* AppDelegate.swift in Sources */,
+				9ADAE68A2C568B2000D6B7E9 /* CustomTextField.swift in Sources */,
+				9ADAE68E2C568CF800D6B7E9 /* ForgotVC.swift in Sources */,
+				9ADAE6902C568DD900D6B7E9 /* AuthHeaderView.swift in Sources */,
+				9ADAE6852C5689F700D6B7E9 /* SignInVC.swift in Sources */,
+				9ADAE68C2C568B3300D6B7E9 /* CustomButton.swift in Sources */,
+				9ADAE6872C568A9500D6B7E9 /* SignUpVC.swift in Sources */,
 				9ADAE6732C5688ED00D6B7E9 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -147,14 +175,6 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		9ADAE6762C5688ED00D6B7E9 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				9ADAE6772C5688ED00D6B7E9 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		9ADAE67B2C5688EE00D6B7E9 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -297,7 +317,6 @@
 				INFOPLIST_FILE = SnapChat/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -325,7 +344,6 @@
 				INFOPLIST_FILE = SnapChat/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
