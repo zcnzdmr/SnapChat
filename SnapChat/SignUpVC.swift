@@ -10,6 +10,17 @@ import UIKit
 class SignUpVC: UIViewController {
     
     
+    
+    let textView1 : UITextView = {
+        let tv = UITextView()
+        tv.isEditable = false
+        tv.isScrollEnabled = false
+        tv.layer.cornerRadius = 12
+        tv.backgroundColor = UIColor.lightGray.withAlphaComponent(0.1)
+        return tv
+    }()
+    
+    
     private let authView = AuthHeaderView(title: "Sign Up", subtitle: "Create your account")
     private let emailTF = CustomTextField(textFieldType: .email)
     private let usernameTF = CustomTextField(textFieldType: .username)
@@ -17,37 +28,48 @@ class SignUpVC: UIViewController {
     private let signUpButton = CustomButton(title: "Sign Up", buttonType: .big,hasbackground: true)
     private let signInButton = CustomButton(title: "Already have an account? Sign In.", buttonType: .medium)
     
-    private let termsLabel = UILabel()
-    
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         view.backgroundColor = .systemBackground
+        extraComponents()
         setUpUI()
-        tapGesture()
+        addTargetsToButtons()
     }
     
-    func tapGesture() {
-        let tapGestureRecognizer1 = UITapGestureRecognizer(target: self, action: #selector(handleTapOnLabel))
-        view.addGestureRecognizer(tapGestureRecognizer1)
+    private func addTargetsToButtons() {
+        
+        signUpButton.addTarget(self, action: #selector(didTapSignUp), for: .touchUpInside)
+        signInButton.addTarget(self, action: #selector(didTapSignIn), for: .touchUpInside)
+        
+    }
+    
+    @objc func didTapSignUp() {
+        self.navigationController?.show(HomePage(), sender: nil)
+    }
+    
+    @objc func didTapSignIn() {
+        //        self.navigationController?.pushViewController(SignInVC(), animated: false)
+        self.navigationController?.popToRootViewController(animated: true) // this is used to be headed to rootViewController of navigation controller.
     }
     
     
-        func extraComponents() {
-    
-            let text1 = "By creating an account you aggree to our Terms & Conditions and you acknowledge that you have read our Privacy Policy"
-            termsLabel.text = text1
-            termsLabel.textAlignment = .center
-    //        termsLabel.layer.borderWidth = 1
-            termsLabel.font = .systemFont(ofSize: 10, weight: .medium)
-            termsLabel.numberOfLines = .zero
-            termsLabel.isUserInteractionEnabled = true
-    
-        }
-    
-    
-    @objc func handleTapOnLabel(gesture: UITapGestureRecognizer) {
+    func extraComponents() {
+        
+        
+        
+        let text1 = "By creating an account you aggree to our Terms & Conditions and you acknowledge that you have read our Privacy Policy"
+        let attributedString = NSMutableAttributedString(string: text1)
+        
+        let termsRange1 = ( text1 as NSString).range(of: "Terms & Conditions")
+        attributedString.addAttribute(.link, value: "terms://", range: termsRange1)
+        
+        let termsRange2 = (text1 as NSString).range(of: "Privacy Policy")
+        attributedString.addAttribute(.link, value: "privacy://", range: termsRange2)
+        
+        textView1.attributedText = attributedString
+        textView1.delegate = self
         
     }
     
@@ -61,7 +83,7 @@ class SignUpVC: UIViewController {
         self.view.addSubview(passwordTF)
         self.view.addSubview(signUpButton)
         self.view.addSubview(signInButton)
-        self.view.addSubview(termsLabel)
+        self.view.addSubview(textView1)
         
         
         authView.translatesAutoresizingMaskIntoConstraints = false
@@ -70,7 +92,7 @@ class SignUpVC: UIViewController {
         passwordTF.translatesAutoresizingMaskIntoConstraints = false
         signUpButton.translatesAutoresizingMaskIntoConstraints = false
         signInButton.translatesAutoresizingMaskIntoConstraints = false
-        termsLabel.translatesAutoresizingMaskIntoConstraints = false
+        textView1.translatesAutoresizingMaskIntoConstraints = false
         
         
         NSLayoutConstraint.activate([
@@ -109,12 +131,28 @@ class SignUpVC: UIViewController {
             signInButton.heightAnchor.constraint(equalTo: self.view.widthAnchor, multiplier: 0.05),
             
             
-            termsLabel.centerXAnchor.constraint(equalTo: self.view.centerXAnchor),
-            termsLabel.topAnchor.constraint(equalTo: signUpButton.bottomAnchor, constant: 8),
-            termsLabel.widthAnchor.constraint(equalTo: self.view.widthAnchor, multiplier: 0.80),
-            termsLabel.heightAnchor.constraint(equalTo: self.view.heightAnchor, multiplier: 0.09)
+            textView1.centerXAnchor.constraint(equalTo: self.view.centerXAnchor),
+            textView1.topAnchor.constraint(equalTo: signUpButton.bottomAnchor, constant: 8),
+            textView1.widthAnchor.constraint(equalTo: self.view.widthAnchor, multiplier: 0.88),
+            textView1.heightAnchor.constraint(equalTo: self.view.heightAnchor, multiplier: 0.06)
             
         ])
     }
+}
+
+
+// MARK: UITextViewDelegate extension
+extension SignUpVC : UITextViewDelegate {
+        func textView(_ textView: UITextView, shouldInteractWith URL: URL, in characterRange: NSRange) -> Bool {
+            if URL.scheme == "terms" {
+                let termsVC = TermsVC()
+                self.navigationController?.present(termsVC, animated: true)
+            } else if URL.scheme == "privacy" {
+                let privacyVC = PrivacyVC()
+                self.navigationController?.present(privacyVC, animated: true)
+            }
+            return true
+        }
+    // this code is used to specify what to do with attributed string URL. 
 }
 

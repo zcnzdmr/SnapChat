@@ -4,4 +4,8 @@
 	2. You used switch case with enum case many times. First you created enum to classify user interface components and then you used switch instead of using if statements. It is very convenient while using enum. And you give some unique features to buttons, textfields and labels etc. The examples are situated in CustomTextField.swift and CustomButton.swift. 
 
 	3. You used if statements with abbreviations. It is like this, " let titleColor : UIColor = hasbackground ? .white : .systemBlue ". Hasbackground is a Boolean value and you're saying that if it is true make it white , if not make it systemBlue. Only question mark ? and colon : are used while creating this if statement. It is available in CustomButton.swift.
+	
+	4. I learnt another presentation between ViewControllers. Not between but directly to root ViewController or firstPage. This is "self.navigationController?.popToRootViewController(animated: true) ". When you hook this code to a button, it directly takes you to first page doesn't matter on what page you are. So it is different from navigationController.pushviewController(...) or navigationController.show(...) or navigationController.present(...).
+
+	5. If we want to get back to previous ViewController we can use without "root" like "self.navigationController?.popViewController(animated: true/false)" This code takes us to just previous ViewController not the top of the hierarchy like rootViewController.  
 
