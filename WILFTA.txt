@@ -9,3 +9,4 @@
 
 	5. If we want to get back to previous ViewController we can use without "root" like "self.navigationController?.popViewController(animated: true/false)" This code takes us to just previous ViewController not the top of the hierarchy like rootViewController.  
 
+	6. You learned UITextView() which is like a label but it has lots of text attributes. It is generally used for long texts and for links that is attached to a certain word or sentence within in the paragraph. We use NSAttributedString() or the sub-class of this NSAttributedString() which is NSMutableAttributedString(). You used NSMutableAttributedString() to give a feature of clickable to a "Terms & conditions" word. All of them is situated in SignUpVC() page. 

@@ -56,20 +56,18 @@ class SignUpVC: UIViewController {
     
     
     func extraComponents() {
-        
-        
-        
+
         let text1 = "By creating an account you aggree to our Terms & Conditions and you acknowledge that you have read our Privacy Policy"
         let attributedString = NSMutableAttributedString(string: text1)
         
         let termsRange1 = ( text1 as NSString).range(of: "Terms & Conditions")
-        attributedString.addAttribute(.link, value: "terms://", range: termsRange1)
+        attributedString.addAttribute(.link, value: "https://policies.google.com/terms?hl=en-US", range: termsRange1)
         
         let termsRange2 = (text1 as NSString).range(of: "Privacy Policy")
-        attributedString.addAttribute(.link, value: "privacy://", range: termsRange2)
+        attributedString.addAttribute(.link, value: "https://policies.google.com/privacy?hl=en-US", range: termsRange2)
         
         textView1.attributedText = attributedString
-        textView1.delegate = self
+//        textView1.delegate = self
         
     }
     
@@ -141,18 +139,18 @@ class SignUpVC: UIViewController {
 }
 
 
-// MARK: UITextViewDelegate extension
-extension SignUpVC : UITextViewDelegate {
-        func textView(_ textView: UITextView, shouldInteractWith URL: URL, in characterRange: NSRange) -> Bool {
-            if URL.scheme == "terms" {
-                let termsVC = TermsVC()
-                self.navigationController?.present(termsVC, animated: true)
-            } else if URL.scheme == "privacy" {
-                let privacyVC = PrivacyVC()
-                self.navigationController?.present(privacyVC, animated: true)
-            }
-            return true
-        }
-    // this code is used to specify what to do with attributed string URL. 
-}
+//// MARK: UITextViewDelegate extension
+//extension SignUpVC : UITextViewDelegate {
+//        func textView(_ textView: UITextView, shouldInteractWith URL: URL, in characterRange: NSRange) -> Bool {
+//            if URL.scheme == "https://policies" {
+//                let termsVC = TermsVC()
+//                self.navigationController?.present(termsVC, animated: true)
+//            } else if URL.scheme == "privacy" {
+//                let privacyVC = PrivacyVC()
+//                self.navigationController?.present(privacyVC, animated: true)
+//            }
+//            return true
+//        }
+//    // this code is used to specify what to do with attributed string URL. 
+//}
 
