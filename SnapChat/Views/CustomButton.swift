@@ -14,8 +14,6 @@ class CustomButton: UIButton {
         case big
         case medium
         case small
-        
-        
     }
     
     private let authButtonType : ButtonType
@@ -25,7 +23,7 @@ class CustomButton: UIButton {
         super.init(frame: .zero)
         
         self.setTitle(title, for: .normal)
-        self.layer.borderWidth = 1
+//        self.layer.borderWidth = 1
         self.layer.cornerRadius = 12
         self.layer.masksToBounds = true
 
@@ -42,7 +40,7 @@ class CustomButton: UIButton {
         case .medium:
             self.titleLabel?.font = .systemFont(ofSize: 18, weight: .semibold)
         case .small:
-            self.titleLabel?.font = .systemFont(ofSize: 16, weight: .regular)
+            self.titleLabel?.font = .systemFont(ofSize: 15, weight: .regular)
         }
         
     }

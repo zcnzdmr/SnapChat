@@ -1,0 +1,26 @@
+
+1. In this application, I added all packages and libraries by using SPK( Swift Package Manager ).
+
+2. I use Firebase Cloud storage system. 
+
+3. You learnt how to add animation to Buttons. The instance code is situated in SignUpVC. You gave the signUpButton an animation to get smaller and bigger when touched. 
+
+4. .toggle() is a sort of function that is able to change the Boolean's value otherwise. If a boolean variable true, when you write booleanVariable.toggle(), it becomes false. It's a practical way to change the Boolean's value. 
+
+5. "navigationItem.backButtonDisplayMode = .minimal" with this code you can hide the text of back written on back button. However we need to write this code in previous ViewController because it determines the name and color and symbols of back button. This code is situated in FirstVC but it affects SignUpVC's backbar button item. 
+
+6. "LABELNAME.textColor = UIColor.white.withAlphaComponent(0.5)" with this code, you can make the texts of your labels opaque or transparent. WithAlphaComponent takes value between 1-0 which determines the opacity of text of label. And by writing white you're specifying the color of text. 
+
+7. func colorOfBackButton() {
+        let backButton = UIBarButtonItem()
+        backButton.title = ""
+        backButton.tintColor = .black // Yeni renk
+        navigationController?.navigationBar.topItem?.backBarButtonItem = backButton
+    } 
+	with this code. We can change the color and the name of backButton on the other View Controller. We write this function within the func that supply transaction between ViewControllers. Such as:    
+
+ @objc func signInFunc() {
+        self.navigationController?.pushViewController(SignUpVC(), animated: true)
+        colorOfBackButton()
+    }
+8. "view.translatesAutoresizingMaskIntoConstraints = false" this code needs to be false because when it's false our constraints on view can be visible. Otherwise we can't see our constraints on the screen. This is important to learn how to give constraints by using NSLayoutConsraints. It's in autoheader page. 

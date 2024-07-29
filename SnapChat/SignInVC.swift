@@ -15,16 +15,38 @@ class SignInVC: UIViewController {
     private let password = CustomTextField(textFieldType: .password)
     private let signInButton = CustomButton(title: "Sign In", buttonType: .big, hasbackground: true)
     private let signUpButton = CustomButton(title: "New user? Create Account", buttonType: .medium)
+    private let forgotPasswordButton = CustomButton(title: "Forgot password ?", buttonType: .small)
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
         self.setUpUI()
-        
+        buttonsTarget()
     }
     
-    override func viewWillAppear(_ animated: Bool) {
-        self.navigationController?.navigationBar.isHidden = true
+//  
+    
+    private func buttonsTarget() {
+        
+        signInButton.addTarget(self, action: #selector(didTapSignIn), for: .touchUpInside)
+        forgotPasswordButton.addTarget(self, action: #selector(didTapForgotPassword), for: .touchUpInside)
+        signUpButton.addTarget(self, action: #selector(didTapsigUp), for: .touchUpInside)
+    }
+    
+    @objc func didTapSignIn() {
+        self.navigationController?.pushViewController(HomePage(), animated: true)
+//        let homeVC = HomePage()
+//        homeVC.modalPresentationStyle = .fullScreen
+//        self.present(homeVC, animated: false, completion: nil) // this is for modal presentation
+    }
+    
+    @objc func didTapsigUp() {
+        self.navigationController?.pushViewController(SignUpVC(), animated: true)
+        //        self.navigationController?.present(SignUpVC(), animated: true) // this is for modal presentation
+    }
+    
+    @objc func didTapForgotPassword() {
+        self.navigationController?.pushViewController(ForgotVC(), animated: true)
     }
     
     
@@ -36,12 +58,14 @@ class SignInVC: UIViewController {
         self.view.addSubview(password)
         self.view.addSubview(signInButton)
         self.view.addSubview(signUpButton)
+        self.view.addSubview(forgotPasswordButton)
         
         headerView.translatesAutoresizingMaskIntoConstraints = false
         usernameTF.translatesAutoresizingMaskIntoConstraints = false
         password.translatesAutoresizingMaskIntoConstraints = false
         signInButton.translatesAutoresizingMaskIntoConstraints = false
         signUpButton.translatesAutoresizingMaskIntoConstraints = false
+        forgotPasswordButton.translatesAutoresizingMaskIntoConstraints = false
         
         
         NSLayoutConstraint.activate([
@@ -61,15 +85,21 @@ class SignInVC: UIViewController {
             password.heightAnchor.constraint(equalTo: view.heightAnchor, multiplier: 0.05),
             
             
-            signInButton.topAnchor.constraint(equalTo: password.bottomAnchor, constant: 20),
+            signInButton.topAnchor.constraint(equalTo: password.bottomAnchor, constant: 50),
             signInButton.centerXAnchor.constraint(equalTo: self.view.centerXAnchor),
             signInButton.widthAnchor.constraint(equalTo: self.view.widthAnchor, multiplier: 0.85),
             signInButton.heightAnchor.constraint(equalTo: self.view.heightAnchor, multiplier: 0.06),
             
-            signUpButton.topAnchor.constraint(equalTo: signInButton.bottomAnchor, constant: 10),
+            signUpButton.topAnchor.constraint(equalTo: signInButton.bottomAnchor, constant: 8),
             signUpButton.centerXAnchor.constraint(equalTo: self.view.centerXAnchor),
             signUpButton.widthAnchor.constraint(equalTo: self.view.widthAnchor, multiplier: 0.75),
-            signUpButton.heightAnchor.constraint(equalTo: self.view.heightAnchor, multiplier: 0.06)
+            signUpButton.heightAnchor.constraint(equalTo: self.view.heightAnchor, multiplier: 0.05),
+            
+            
+            forgotPasswordButton.topAnchor.constraint(equalTo: password.bottomAnchor, constant: 5),
+            forgotPasswordButton.centerXAnchor.constraint(equalTo: self.view.centerXAnchor, constant: 90),
+            forgotPasswordButton.widthAnchor.constraint(equalTo: self.view.widthAnchor, multiplier: 0.45),
+            forgotPasswordButton.heightAnchor.constraint(equalTo: self.view.heightAnchor, multiplier: 0.04)
             
         ])
     }
