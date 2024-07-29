@@ -1,0 +1,7 @@
+
+	1. First thing you learnt from this app is that you can create reusable items such as View, Textfield and Label. You generate AuthHeaderView which is a view and you added some components like label and imageView. Then you add init to this and want some title and subtitles because you create variable from this AuthHeaderView in SignInVC. When you generate variables it asks you to give string for title and subtitle. Then you're adding this view to your signInVC view. There are two views on SignInVC. And lastly you give constraints of this view. This is the way of reusing any type of components. You simply create a variable from it within any ViewController. 
+	
+	2. You used switch case with enum case many times. First you created enum to classify user interface components and then you used switch instead of using if statements. It is very convenient while using enum. And you give some unique features to buttons, textfields and labels etc. The examples are situated in CustomTextField.swift and CustomButton.swift. 
+
+	3. You used if statements with abbreviations. It is like this, " let titleColor : UIColor = hasbackground ? .white : .systemBlue ". Hasbackground is a Boolean value and you're saying that if it is true make it white , if not make it systemBlue. Only question mark ? and colon : are used while creating this if statement. It is available in CustomButton.swift.
+
