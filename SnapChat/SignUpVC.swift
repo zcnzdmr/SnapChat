@@ -154,7 +154,8 @@ extension SignUpVC : UITextViewDelegate {
                 self.navigationController?.present(navCont, animated: true)
             } else if URL.absoluteString == "privacy" {
                 let privacyVC = PrivacyVC()
-                self.navigationController?.present(privacyVC, animated: true)
+                let nav = UINavigationController(rootViewController: privacyVC)
+                self.navigationController?.present(nav, animated: true)
             }
             return false
         }

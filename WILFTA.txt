@@ -27,7 +27,7 @@ But you should understand the fact that loadView() func is launched before viewD
                self.navigationController?.present(navCont, animated: true)            with this code FİRST you are adding a navigation controller to your TermsVC and introducing a .present() passage. (Use navigate not a pass in English while describing a passage between view controllers).
 
 
-		10. You also figure out that 
+	10. You also figure out that 
 
 		func textView(_ textView: UITextView, shouldInteractWith URL: URL, in characterRange: NSRange) -> Bool {
             	if URL.absoluteString == "policy" {															
@@ -35,7 +35,12 @@ But you should understand the fact that loadView() func is launched before viewD
 with this function which is one of the UITextViewDelegate function, you are deciding what to do with NSMutableAttributedString. If you write if URL.link == "..." , you have to go to a web browser directly , if you want to make something different this attributed string you should write .obsoluteString == "...". You created this in the SignUpVC. You check from there. But don't forget to equal delegate of variable of UITextView to self !
 
 
-	11.
+	11. If you write 
+
+				@objc func didTapBarButton() { self.dismiss(animated: true) } that code and used it with a button, when you tapped the button the page is closed. This code I mean .dismiss(...) code means close, terminate the ViewController. And you used this both TermsVC and PrivacyVC to terminate the ViewControllers. You attach, link this code this function to rightbar button.
+
+       						 
+   						
 
 
 
