@@ -8,39 +8,24 @@
 import UIKit
 import WebKit
 
-class PrivacyVC: UIViewController, WKUIDelegate {
+class PrivacyVC: UIViewController {
     
-    var webView : WKWebView!
+    var webView = WKWebView()
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        self.navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .close, target: self, action: #selector(didTapBarButton))
-        
-        let webConfiguration = WKWebViewConfiguration()
-        webView = WKWebView(frame: view.frame, configuration: webConfiguration)
+//        self.navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .close, target: self, action: #selector(didTapBarButton))
         
         let myUrl = URL(string: "https://policies.google.com/privacy?hl=en-US")
         let myRequest = URLRequest(url: myUrl!)
         webView.load(myRequest)
-        
-        view = webView
-        
-//        webView.translatesAutoresizingMaskIntoConstraints = false
-//        
-//        NSLayoutConstraint.activate([
-//                
-//            webView.topAnchor.constraint(equalTo: self.view.topAnchor),
-//            webView.centerXAnchor.constraint(equalTo: self.view.centerXAnchor),
-//            webView.leadingAnchor.constraint(equalTo: self.view.leadingAnchor),
-//            webView.trailingAnchor.constraint(equalTo: self.view.trailingAnchor)
-//        
-//            ])
-        
-        webView.uiDelegate = self
+        self.view = webView
         
     }
-    @objc func didTapBarButton() {
-        self.dismiss(animated: true)
-    }
+//    @objc func didTapBarButton() {
+//        self.dismiss(animated: true) {
+//            print("this view is closed") // while dissmissing or terminating Viewcontroller you can make this code do anything like sending message to other VC's or performing some task as soon as it is terminated.
+//        }
+//    }
 }

@@ -34,7 +34,7 @@ class TermsVC: UIViewController,WKUIDelegate {
         webView.uiDelegate = self
         view = webView
         
-        let myUrl = URL(string: "https://medium.com")
+        let myUrl = URL(string: "https://policies.google.com/terms?hl=en-US")
         let myRequest = URLRequest(url: myUrl!)
         webView.load(myRequest)
     }

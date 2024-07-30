@@ -9,7 +9,14 @@
 
 	5. If we want to get back to previous ViewController we can use without "root" like "self.navigationController?.popViewController(animated: true/false)" This code takes us to just previous ViewController not the top of the hierarchy like rootViewController.  
 
-	6. You learned UITextView() which is like a label but it has lots of text attributes. It is generally used for long texts and for links that is attached to a certain word or sentence within in the paragraph. We use NSAttributedString() or the sub-class of this NSAttributedString() which is NSMutableAttributedString(). You used NSMutableAttributedString() to give a feature of tappable to a "Terms & conditions" word. All of them is situated in SignUpVC() page. 
+	6. You learned UITextView() which is like a label but it has lots of text attributes. It is generally used for long texts and for links that is attached to a certain word or sentence within in the paragraph. We use NSAttributedString() or the sub-class of this NSAttributedString() which is NSMutableAttributedString(). You used NSMutableAttributedString() to give a feature of tappable to a "Terms & conditions" word. All of them is situated in SignUpVC() page.
+
+
+	Code goes like .
+
+
+
+		 
 
 	7. "override func loadView()" function is called before viewDidLoad() func. Understand the life cycle which goes respectively. 
 
@@ -37,7 +44,13 @@ with this function which is one of the UITextViewDelegate function, you are deci
 
 	11. If you write 
 
-				@objc func didTapBarButton() { self.dismiss(animated: true) } that code and used it with a button, when you tapped the button the page is closed. This code I mean .dismiss(...) code means close, terminate the ViewController. And you used this both TermsVC and PrivacyVC to terminate the ViewControllers. You attach, link this code this function to rightbar button.
+				@objc func didTapBarButton() { self.dismiss(animated: true) } that code and used it with a button, when you tapped the button the page is closed. This code I mean .dismiss(...) code means close, terminate the ViewController. And you used this both TermsVC and PrivacyVC to terminate the ViewControllers. You attach, link this code this function to rightbar button. 
+
+	+Plus: Note about .dismiss(). It includes completion if you want, like .dismiss(animated:true, completion: () -> Void). If you enter this completion it looks like this .dismiss(animated:true) { //you can write any code you want to make completion handler do ...}. 
+
+	12. You dealt with web pages and URLs to create a webpage viewController but apple doesn't allow its applications to use insecure http protocols so you can't open a http://www.blabla.com. Only let https://... web protocols. So you yourself should adjust it over Info.plist. Process steps :
+
+	Info.plist > Information Property List > App Transport Security Settings > Allow Arbitrary Loads = YES .
 
        						 
    						
