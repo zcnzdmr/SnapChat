@@ -28,6 +28,11 @@ class SignUpVC: UIViewController {
     private let signUpButton = CustomButton(title: "Sign Up", buttonType: .big,hasbackground: true)
     private let signInButton = CustomButton(title: "Already have an account? Sign In.", buttonType: .medium)
     
+//
+//    override func loadView() {
+//        // this function is launched before viewDidLoad
+//        print("s")
+//    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -61,13 +66,13 @@ class SignUpVC: UIViewController {
         let attributedString = NSMutableAttributedString(string: text1)
         
         let termsRange1 = ( text1 as NSString).range(of: "Terms & Conditions")
-        attributedString.addAttribute(.link, value: "https://policies.google.com/terms?hl=en-US", range: termsRange1)
+        attributedString.addAttribute(.link, value: "policy", range: termsRange1)
         
         let termsRange2 = (text1 as NSString).range(of: "Privacy Policy")
-        attributedString.addAttribute(.link, value: "https://policies.google.com/privacy?hl=en-US", range: termsRange2)
+        attributedString.addAttribute(.link, value: "privacy", range: termsRange2)
         
         textView1.attributedText = attributedString
-//        textView1.delegate = self
+        textView1.delegate = self
         
     }
     
@@ -139,18 +144,21 @@ class SignUpVC: UIViewController {
 }
 
 
-//// MARK: UITextViewDelegate extension
-//extension SignUpVC : UITextViewDelegate {
-//        func textView(_ textView: UITextView, shouldInteractWith URL: URL, in characterRange: NSRange) -> Bool {
-//            if URL.scheme == "https://policies" {
-//                let termsVC = TermsVC()
-//                self.navigationController?.present(termsVC, animated: true)
-//            } else if URL.scheme == "privacy" {
-//                let privacyVC = PrivacyVC()
-//                self.navigationController?.present(privacyVC, animated: true)
-//            }
-//            return true
-//        }
-//    // this code is used to specify what to do with attributed string URL. 
-//}
+// MARK: UITextViewDelegate extension
+extension SignUpVC : UITextViewDelegate {
+    
+        func textView(_ textView: UITextView, shouldInteractWith URL: URL, in characterRange: NSRange) -> Bool {
+            if URL.absoluteString == "policy" {
+                let termsVC = TermsVC()
+                let navCont = UINavigationController(rootViewController: termsVC)
+                self.navigationController?.present(navCont, animated: true)
+            } else if URL.absoluteString == "privacy" {
+                let privacyVC = PrivacyVC()
+                self.navigationController?.present(privacyVC, animated: true)
+            }
+            return false
+        }
+    
+    // this code is used to specify what to do with attributed string URL.
+}
 
