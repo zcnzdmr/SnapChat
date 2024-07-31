@@ -15,6 +15,7 @@ class SignUpVC: UIViewController {
         let tv = UITextView()
         tv.isEditable = false
         tv.isScrollEnabled = false
+        tv.delaysContentTouches = false // while scrolling, it decelarate your touch speed.
         tv.layer.cornerRadius = 12
         tv.backgroundColor = UIColor.lightGray.withAlphaComponent(0.1)
         return tv
@@ -71,7 +72,10 @@ class SignUpVC: UIViewController {
         let termsRange2 = (text1 as NSString).range(of: "Privacy Policy")
         attributedString.addAttribute(.link, value: "privacy", range: termsRange2)
         
+        textView1.linkTextAttributes = [.font: UIFont.systemFont(ofSize: 12, weight: .semibold),
+                                        .foregroundColor : UIColor.red]
         textView1.attributedText = attributedString
+
         textView1.delegate = self
         
     }
@@ -136,7 +140,7 @@ class SignUpVC: UIViewController {
             
             textView1.centerXAnchor.constraint(equalTo: self.view.centerXAnchor),
             textView1.topAnchor.constraint(equalTo: signUpButton.bottomAnchor, constant: 8),
-            textView1.widthAnchor.constraint(equalTo: self.view.widthAnchor, multiplier: 0.88),
+            textView1.widthAnchor.constraint(equalTo: self.view.widthAnchor, multiplier: 0.9),
             textView1.heightAnchor.constraint(equalTo: self.view.heightAnchor, multiplier: 0.06)
             
         ])

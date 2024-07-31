@@ -14,6 +14,16 @@
 
 	Code goes like .
 
+			
+        let text1 = "By creating an account you aggree to our Terms & Conditions and you acknowledge that you have read our Privacy Policy"
+        let attributedString = NSMutableAttributedString(string: text1)
+        
+        let termsRange1 = ( text1 as NSString).range(of: "Terms & Conditions")
+        attributedString.addAttribute(.link, value: "https://policies.google.com/terms?hl=en-US", range: termsRange1)
+
+	   textView1.attributedText = attributedString		
+							
+	--> now "Terms & Conditions" is tappable and takes you to web browser of the device by navigating the website we specified with in value.
 
 
 		 
@@ -25,7 +35,7 @@
 
 But you should understand the fact that loadView() func is launched before viewDidLoad(). It is used before view is loaded. 
 
-	8. You also learned WebKit library that is used to launch a webpage on your app. This is very useful and handy when it comes to exhibiting, displaying some web pages. With the help of this library you can show any websites in your app. To do that, you should use WKWebView. How to use and how to install in your ViewController is shown within TermsVC and PrivacyVC. We turned these ViewControllers a web page via WKWebView. 
+	8. You also learned WebKit library that is used to launch a webpage on your app. This is very useful and handy when it comes to exhibiting, displaying some web pages. With the help of this library you can show any websites in your app. To do that, you should use WKWebView. How to use and how to install in your ViewController is shown within TermsVC and PrivacyVC. We turned these ViewControllers into web pages via WKWebView. 
 
 	9. While you are trying to add a NavigationBarButtonItem to your TermsVC , you run into an error due to the lack of NavigationController. You introduce a modal passage from SignUpVC to TermsVC within one of the functions of UITextViewDelegate which is "shouldInteractWith" func. If there is no navigationController in a page you can't add a bar button to it. But you figured out to add a navigation before you create a passage from SingUpVC. 
 
@@ -39,12 +49,12 @@ But you should understand the fact that loadView() func is launched before viewD
 		func textView(_ textView: UITextView, shouldInteractWith URL: URL, in characterRange: NSRange) -> Bool {
             	if URL.absoluteString == "policy" {															
 
-with this function which is one of the UITextViewDelegate function, you are deciding what to do with NSMutableAttributedString. If you write if URL.link == "..." , you have to go to a web browser directly , if you want to make something different this attributed string you should write .obsoluteString == "...". You created this in the SignUpVC. You check from there. But don't forget to equal delegate of variable of UITextView to self !
+with this function which is one of the UITextViewDelegate function, you are deciding what to do with NSMutableAttributedString. If you write if URL.link == "..." , you have to go to a web browser directly , if you want to make something different with this attributed string you should write .obsoluteString == "...". You created this in the SignUpVC. You check from there. But don't forget to equal delegate of variable of UITextView to self !
 
 
 	11. If you write 
 
-				@objc func didTapBarButton() { self.dismiss(animated: true) } that code and used it with a button, when you tapped the button the page is closed. This code I mean .dismiss(...) code means close, terminate the ViewController. And you used this both TermsVC and PrivacyVC to terminate the ViewControllers. You attach, link this code this function to rightbar button. 
+				@objc func didTapBarButton() { self.dismiss(animated: true) } that code and used it with a button, when you tapped the button the page is closed. This code I mean .dismiss(...) code means close, terminate the ViewController. And you used this both TermsVC and PrivacyVC to terminate the ViewControllers. You attach, link this code this function to right bar button. 
 
 	+Plus: Note about .dismiss(). It includes completion if you want, like .dismiss(animated:true, completion: () -> Void). If you enter this completion it looks like this .dismiss(animated:true) { //you can write any code you want to make completion handler do ...}. 
 
@@ -53,14 +63,21 @@ with this function which is one of the UITextViewDelegate function, you are deci
 	Info.plist > Information Property List > App Transport Security Settings > Allow Arbitrary Loads = YES .
 
        						 
-   						
+   	13. You learned how to give features to attributedString after made it link with NSMutableAttributedString. You use a dictionary format to do that :
+
+	textView1.linkTextAttributes = [NSAttributedString.Key.font: 
+									UIFont.systemFont(ofSize: 12, weight: .bold),
+                                        .foregroundColor : UIColor.red]			
 
 
+	you can write only .font as well. Because linkTextAttributes corresponds to NSAttributedString.Key. 
+
+This is the link of this lesson : https://www.youtube.com/watch?v=6h5TrAtyQi8&list=PLWOgAHhZbsIEM4AibGeAI_H66l0RpQCOX&index=5
 
 
+	14. You learned a shortcut. The name of it is "Open Quickly". It opens a rectangle search box. You type whatever you look for in it. It is very useful and handy when it comes to searching something and finding it quickly. You open this window with "Command + Shift + O (letter) " keybutton combination. 
 
-
-
+	15. 
 
 
 
