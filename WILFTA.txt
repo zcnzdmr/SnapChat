@@ -77,8 +77,19 @@ This is the link of this lesson : https://www.youtube.com/watch?v=6h5TrAtyQi8&li
 
 	14. You learned a shortcut. The name of it is "Open Quickly". It opens a rectangle search box. You type whatever you look for in it. It is very useful and handy when it comes to searching something and finding it quickly. You open this window with "Command + Shift + O (letter) " keybutton combination. 
 
-	15. 
+	15. You added an AlertManager.swift to your project to form reusable UIAlertController and UIAlertAction. These components will be used many times by other ViewController so you prevent the code from repeating itself again and again on every page. So that you make this alert work on other ViewController you added a UIViewController as a parameter to it. This enables you to use this Alert on every page just by giving this ViewController parameters "self". The example is present in AlertManager and other ViewControllers.
 
+	16. You learnt parameter labels which means that a word written just before the name of parameters within functions. To give an example, 
+
+		func greet(person name: String) {
+    		print("Hello, \(name)!")
+		}                						----> here name is parameter name, String is parameter type and person is parameter label. You can type whatever you want. They are used to amplify readability and clarity of code. They don't perform any task other than giving extra information that developer would like to. 
+	
+	In summary: 
+
+				func funcName (parameterLabel parameterName: ParameterType) {
+   					 // The content of a common function
+					}
 
 
 

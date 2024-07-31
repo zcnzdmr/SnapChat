@@ -34,7 +34,11 @@ class SignInVC: UIViewController {
     }
     
     @objc func didTapSignIn() {
-        self.navigationController?.pushViewController(HomePage(), animated: true)
+        // TODO: Add user signing in function of Firebase and if statements for alerts
+//        self.navigationController?.pushViewController(HomePage(), animated: true)
+        
+        AlertManager.showInvalidEmailAlert(vc: self)
+        
 //        let homeVC = HomePage()
 //        homeVC.modalPresentationStyle = .fullScreen
 //        self.present(homeVC, animated: false, completion: nil) // this is for modal presentation
@@ -46,8 +50,7 @@ class SignInVC: UIViewController {
     }
     
     @objc func didTapForgotPassword() {
-        _ = AlertManager(vc: self, title: "aaa", message: "jlfdsjfj")
-//        self.navigationController?.pushViewController(ForgotVC(), animated: true)
+        self.navigationController?.pushViewController(ForgotVC(), animated: true)
     }
     
     
