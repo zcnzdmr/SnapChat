@@ -79,7 +79,6 @@ extension AlertManager {
     
 }
 
-
 // MARK: Log Out Errors
 extension AlertManager {
     
