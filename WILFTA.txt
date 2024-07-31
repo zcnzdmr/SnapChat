@@ -95,7 +95,7 @@ This is the link of this lesson : https://www.youtube.com/watch?v=6h5TrAtyQi8&li
 					}
 
 
-
+	17. You come across an "sandbox: rsync.samba(41021)....." error following integration of FireBase libraries with Cocoapods. This happens whenever you integrate Firebase with Cocoapods into your app. Nevertheless the solution is very simple. You just change " Project > Build Settings > Build Options > User Script SandBoxing ----> NO " that's all. You changes yes to no and rebuild app it is solved.
 
 
 
