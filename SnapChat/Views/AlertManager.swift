@@ -118,3 +118,19 @@ extension AlertManager {
     }
 }
 
+// MARK: Empty or Nil error
+extension AlertManager {
+    
+    public static func showEmptyEmailError(vc: UIViewController) {
+        alertFonk(on: vc, title: "Email can't be empty", message: nil)
+    }
+    
+    public static func showEmptyPasswordError(vc: UIViewController) {
+        alertFonk(on: vc, title: "Password can't be empty", message: nil)
+    }
+    
+    public static func showEmptyUsernameError(vc: UIViewController) {
+        alertFonk(on: vc, title: "Username can't be empty", message: nil)
+    }
+}
+

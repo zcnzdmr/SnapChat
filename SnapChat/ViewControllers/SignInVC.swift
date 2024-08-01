@@ -9,6 +9,12 @@ import UIKit
 
 class SignInVC: UIViewController {
     
+    
+    // it is used to terminate keyboard that is open on the screen
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        view.endEditing(true)
+    }
+    
     // MARK: UI Components
     private let headerView = AuthHeaderView(title: "Sign In", subtitle: "Sign in to your account")
     private let emailTF = CustomTextField(textFieldType: .email)

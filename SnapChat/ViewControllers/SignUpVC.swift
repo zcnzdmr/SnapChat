@@ -6,10 +6,15 @@
 //
 
 import UIKit
+import FirebaseAuth
 
 class SignUpVC: UIViewController {
     
     
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        view.endEditing(true)
+    }
+
     
     let textView1 : UITextView = {
         let tv = UITextView()
@@ -21,7 +26,7 @@ class SignUpVC: UIViewController {
         return tv
     }()
     
-    
+    private let viewModel = SignUpVM()
     private let authView = AuthHeaderView(title: "Sign Up", subtitle: "Create your account")
     private let emailTF = CustomTextField(textFieldType: .email)
     private let usernameTF = CustomTextField(textFieldType: .username)
@@ -52,7 +57,31 @@ class SignUpVC: UIViewController {
     }
     
     @objc func didTapSignUp() {
-        self.navigationController?.show(HomePage(), sender: nil)
+        
+        if emailTF.text == nil || emailTF.text == "" {
+            
+            AlertManager.showEmptyEmailError(vc: self)
+            
+        }else if usernameTF.text == nil || usernameTF.text == "" {
+            
+            AlertManager.showEmptyUsernameError(vc: self)
+            
+        }else if passwordTF.text == nil || passwordTF.text == ""{
+            
+            AlertManager.showEmptyPasswordError(vc: self)
+        }else {
+            
+            if let username = usernameTF.text, let userPassword = passwordTF.text {
+                
+                
+            }
+        }
+        
+//        let homeVC = HomePage()
+//        homeVC.modalPresentationStyle = .fullScreen
+//        self.present(homeVC, animated: true)
+        
+//        self.navigationController?.show(HomePage(), sender: nil)
     }
     
     @objc func didTapSignIn() {

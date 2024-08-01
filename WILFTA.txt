@@ -97,6 +97,30 @@ This is the link of this lesson : https://www.youtube.com/watch?v=6h5TrAtyQi8&li
 
 	17. You come across an "sandbox: rsync.samba(41021)....." error following integration of FireBase libraries with Cocoapods. This happens whenever you integrate Firebase with Cocoapods into your app. Nevertheless the solution is very simple. You just change " Project > Build Settings > Build Options > User Script SandBoxing ----> NO " that's all. You changes yes to no and rebuild app it is solved.
 
+	18. You learnt a new func that is able to sense, perceive user touch, tap the screen. And you are using it to end keyboard when user is done with it. 
+
+		  		  override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        					view.endEditing(true)
+					}															
+----> this function terminates the keyboard that opened on the screen. User touch on the view and the keyboard of device is closed. You used this in both SignInVC and SignUpVC page 
+
+	18. Closures or completion handlers... We can use a closure as a parameter of a function. We have mentioned the fact that functions can take another function as a parameter. And closures are unnamed functions. So we can give a closure to function as a parameter. At this point, despite the fact that we don't see it , there is a prefix "non-escaping" which means that this closure cannot be used outside of this function. However there are two types of closures that different from each other. First is conventional closure that has an invisible prefix but on the other hand, if we want to use a closure outside of a function we have to put a prefix "@escaping". With this prefix, the closure that we have given to function as parameter can be used outside of function anywhere we call our function. ALSO this " @escaping closure : (alb) -> Void " is kept in memory even after the function is done executing. Which means that we can use this closure's result on another ViewController or asynchronous process. I have used this @escaping closure in Repo and SignUpVC to navigate to HomePage according to result of authentication. (This link serves a good info. About closure  " https://fozoglu.me/swiftte-escaping-ve-non-escaping/ ")
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
