@@ -12,14 +12,18 @@ import FirebaseAuth
 class Repo {
     
     
-    func signUpWithEmail(email:String, username:String, password: String) {
+    func signUpWithEmail(email:String, username:String, password: String, completion: @escaping (Bool,Error?) -> Void) {
         
         Auth.auth().createUser(withEmail: email, password: password) { authdataresult, error in
             
-            if error != nil {
-                AlertManager.showRegistrationErrorMessage(vc: SignUpVC(), error: error!)
-            }else {
+            if let error = error {
+                AlertManager.showRegistrationErrorMessage(vc: SignUpVC(), error: error)
+                completion(false,error)
+ 
                 
+            }else{
+                
+                completion(true,nil)
             }
             
         }

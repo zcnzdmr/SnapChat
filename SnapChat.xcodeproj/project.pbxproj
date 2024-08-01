@@ -21,6 +21,12 @@
 		CC9D3452452663E558E61E9C /* Pods_SnapChat.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2DBB81BB79A3D1302C58BE45 /* Pods_SnapChat.framework */; };
 		F5606BFF2C5B762C0019DE80 /* SignUpVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5606BFE2C5B762C0019DE80 /* SignUpVM.swift */; };
 		F5606C012C5B76490019DE80 /* Repo.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5606C002C5B76490019DE80 /* Repo.swift */; };
+		F5606C082C5BBA320019DE80 /* FirstVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5606C072C5BBA320019DE80 /* FirstVC.swift */; };
+		F5606C0A2C5BBA3E0019DE80 /* SecondVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5606C092C5BBA3E0019DE80 /* SecondVC.swift */; };
+		F5606C0C2C5BBA490019DE80 /* ThirdVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5606C0B2C5BBA490019DE80 /* ThirdVC.swift */; };
+		F5606C0E2C5BBAD10019DE80 /* TabBars.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5606C0D2C5BBAD10019DE80 /* TabBars.swift */; };
+		F5606C102C5BC2860019DE80 /* FourthVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5606C0F2C5BC2860019DE80 /* FourthVC.swift */; };
+		F5606C122C5BC2930019DE80 /* FifthVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5606C112C5BC2930019DE80 /* FifthVC.swift */; };
 		F58ADC0E2C57BE3800F77808 /* TermsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F58ADC0D2C57BE3800F77808 /* TermsVC.swift */; };
 		F58ADC102C57CA5F00F77808 /* PrivacyVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F58ADC0F2C57CA5F00F77808 /* PrivacyVC.swift */; };
 		F5D2B82A2C5A2D90006BFCCC /* AlertManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5D2B8292C5A2D90006BFCCC /* AlertManager.swift */; };
@@ -45,6 +51,12 @@
 		E39EB45A808B9244495021EC /* Pods-SnapChat.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SnapChat.release.xcconfig"; path = "Target Support Files/Pods-SnapChat/Pods-SnapChat.release.xcconfig"; sourceTree = "<group>"; };
 		F5606BFE2C5B762C0019DE80 /* SignUpVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpVM.swift; sourceTree = "<group>"; };
 		F5606C002C5B76490019DE80 /* Repo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Repo.swift; sourceTree = "<group>"; };
+		F5606C072C5BBA320019DE80 /* FirstVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstVC.swift; sourceTree = "<group>"; };
+		F5606C092C5BBA3E0019DE80 /* SecondVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondVC.swift; sourceTree = "<group>"; };
+		F5606C0B2C5BBA490019DE80 /* ThirdVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThirdVC.swift; sourceTree = "<group>"; };
+		F5606C0D2C5BBAD10019DE80 /* TabBars.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBars.swift; sourceTree = "<group>"; };
+		F5606C0F2C5BC2860019DE80 /* FourthVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FourthVC.swift; sourceTree = "<group>"; };
+		F5606C112C5BC2930019DE80 /* FifthVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FifthVC.swift; sourceTree = "<group>"; };
 		F58ADC0D2C57BE3800F77808 /* TermsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TermsVC.swift; sourceTree = "<group>"; };
 		F58ADC0F2C57CA5F00F77808 /* PrivacyVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrivacyVC.swift; sourceTree = "<group>"; };
 		F5D2B8292C5A2D90006BFCCC /* AlertManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertManager.swift; sourceTree = "<group>"; };
@@ -104,6 +116,7 @@
 			children = (
 				F5D2B8282C5A298B006BFCCC /* ViewControllers */,
 				9ADAE6882C568AD100D6B7E9 /* Views */,
+				F5606C052C5BBA170019DE80 /* TabBarControllers */,
 				F5606BFC2C5B760B0019DE80 /* ViewModels */,
 				F5606BFD2C5B76190019DE80 /* Repo */,
 				9ADAE6702C5688ED00D6B7E9 /* AppDelegate.swift */,
@@ -123,6 +136,7 @@
 				9ADAE68F2C568DD900D6B7E9 /* AuthHeaderView.swift */,
 				9ADAE68B2C568B3300D6B7E9 /* CustomButton.swift */,
 				F5D2B8292C5A2D90006BFCCC /* AlertManager.swift */,
+				F5606C0D2C5BBAD10019DE80 /* TabBars.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -141,6 +155,18 @@
 				F5606C002C5B76490019DE80 /* Repo.swift */,
 			);
 			path = Repo;
+			sourceTree = "<group>";
+		};
+		F5606C052C5BBA170019DE80 /* TabBarControllers */ = {
+			isa = PBXGroup;
+			children = (
+				F5606C072C5BBA320019DE80 /* FirstVC.swift */,
+				F5606C092C5BBA3E0019DE80 /* SecondVC.swift */,
+				F5606C0B2C5BBA490019DE80 /* ThirdVC.swift */,
+				F5606C0F2C5BC2860019DE80 /* FourthVC.swift */,
+				F5606C112C5BC2930019DE80 /* FifthVC.swift */,
+			);
+			path = TabBarControllers;
 			sourceTree = "<group>";
 		};
 		F5D2B8282C5A298B006BFCCC /* ViewControllers */ = {
@@ -272,7 +298,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				9ADAE6752C5688ED00D6B7E9 /* HomePage.swift in Sources */,
+				F5606C0E2C5BBAD10019DE80 /* TabBars.swift in Sources */,
 				F5606BFF2C5B762C0019DE80 /* SignUpVM.swift in Sources */,
+				F5606C0C2C5BBA490019DE80 /* ThirdVC.swift in Sources */,
 				9ADAE6712C5688ED00D6B7E9 /* AppDelegate.swift in Sources */,
 				9ADAE68A2C568B2000D6B7E9 /* CustomTextField.swift in Sources */,
 				9ADAE68E2C568CF800D6B7E9 /* ForgotVC.swift in Sources */,
@@ -280,10 +308,14 @@
 				9ADAE6902C568DD900D6B7E9 /* AuthHeaderView.swift in Sources */,
 				F5606C012C5B76490019DE80 /* Repo.swift in Sources */,
 				9ADAE6852C5689F700D6B7E9 /* SignInVC.swift in Sources */,
+				F5606C102C5BC2860019DE80 /* FourthVC.swift in Sources */,
 				9ADAE68C2C568B3300D6B7E9 /* CustomButton.swift in Sources */,
 				F5D2B82A2C5A2D90006BFCCC /* AlertManager.swift in Sources */,
 				9ADAE6872C568A9500D6B7E9 /* SignUpVC.swift in Sources */,
 				F58ADC0E2C57BE3800F77808 /* TermsVC.swift in Sources */,
+				F5606C082C5BBA320019DE80 /* FirstVC.swift in Sources */,
+				F5606C0A2C5BBA3E0019DE80 /* SecondVC.swift in Sources */,
+				F5606C122C5BC2930019DE80 /* FifthVC.swift in Sources */,
 				9ADAE6732C5688ED00D6B7E9 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

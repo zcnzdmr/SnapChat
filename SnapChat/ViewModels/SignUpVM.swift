@@ -13,9 +13,9 @@ class SignUpVM {
     private let repo = Repo()
     
     
-    func signUpWithEmail(email:String, username:String, password: String) {
+    func signUpWithEmail(email:String, username:String, password: String, completion: @escaping (Bool,Error?) -> Void) {
         
-        repo.signUpWithEmail(email: email, username: username, password: password)
+        repo.signUpWithEmail(email: email, username: username, password: password, completion:  completion)
     }
 
 }

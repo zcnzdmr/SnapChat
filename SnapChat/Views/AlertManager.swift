@@ -57,11 +57,11 @@ extension AlertManager {
 // MARK: Registration Errors
 extension AlertManager {
     
-    public static func showRegistrationError(vc: UIViewController) {
-        alertFonk(on: vc, title: "Unknown Registration Error", message: nil)
+    public static func showRegistrationError(vc: UIViewController, error: Error) {
+        alertFonk(on: vc, title: "Unknown Registration Error", message:"\(error.localizedDescription)" )
     }
     
-    public static func showRegistrationErrorMessage(vc:UIViewController,error: Error) {
+    public static func showRegistrationErrorMessage(vc:UIViewController, error: Error) {
         alertFonk(on: vc, title: "Registration error", message: "\(error.localizedDescription)")
     }
 }

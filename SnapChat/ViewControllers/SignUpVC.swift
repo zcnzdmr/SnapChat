@@ -14,7 +14,7 @@ class SignUpVC: UIViewController {
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         view.endEditing(true)
     }
-
+    
     
     let textView1 : UITextView = {
         let tv = UITextView()
@@ -34,11 +34,11 @@ class SignUpVC: UIViewController {
     private let signUpButton = CustomButton(title: "Sign Up", buttonType: .big,hasbackground: true)
     private let signInButton = CustomButton(title: "Already have an account? Sign In.", buttonType: .medium)
     
-//
-//    override func loadView() {
-//        // this function is launched before viewDidLoad
-//        print("s")
-//    }
+    //
+    //    override func loadView() {
+    //        // this function is launched before viewDidLoad
+    //        print("s")
+    //    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -56,7 +56,7 @@ class SignUpVC: UIViewController {
         
     }
     
-    @objc func didTapSignUp() {
+    @objc func  didTapSignUp() {
         
         if emailTF.text == nil || emailTF.text == "" {
             
@@ -71,17 +71,30 @@ class SignUpVC: UIViewController {
             AlertManager.showEmptyPasswordError(vc: self)
         }else {
             
-            if let username = usernameTF.text, let userPassword = passwordTF.text {
+            if let email = emailTF.text, let username = usernameTF.text, let userPassword = passwordTF.text {
                 
-                
+                viewModel.signUpWithEmail(email: email, username: username, password: userPassword) { success, error in
+                    
+                    if success {
+                        
+                        DispatchQueue.main.async {
+//                            let homeVC = HomePage()
+//                            homeVC.modalPresentationStyle = .fullScreen
+//                            self.present(homeVC, animated: true, completion: nil)
+                            
+                            TabBars.tabBars(vc: self)
+                        }
+                    }else {
+                        
+                        if let error = error {
+                            AlertManager.showRegistrationError(vc: self, error: error)
+                        }
+                    }
+                    
+                }
             }
         }
-        
-//        let homeVC = HomePage()
-//        homeVC.modalPresentationStyle = .fullScreen
-//        self.present(homeVC, animated: true)
-        
-//        self.navigationController?.show(HomePage(), sender: nil)
+        //        self.navigationController?.show(HomePage(), sender: nil)
     }
     
     @objc func didTapSignIn() {
@@ -91,7 +104,7 @@ class SignUpVC: UIViewController {
     
     
     func extraComponents() {
-
+        
         let text1 = "By creating an account you aggree to our Terms & Conditions and you acknowledge that you have read our Privacy Policy"
         let attributedString = NSMutableAttributedString(string: text1)
         
@@ -104,7 +117,7 @@ class SignUpVC: UIViewController {
         textView1.linkTextAttributes = [.font: UIFont.systemFont(ofSize: 12, weight: .semibold),
                                         .foregroundColor : UIColor.red]
         textView1.attributedText = attributedString
-
+        
         textView1.delegate = self
         
     }
@@ -180,18 +193,18 @@ class SignUpVC: UIViewController {
 // MARK: UITextViewDelegate extension
 extension SignUpVC : UITextViewDelegate {
     
-        func textView(_ textView: UITextView, shouldInteractWith URL: URL, in characterRange: NSRange) -> Bool {
-            if URL.absoluteString == "policy" {
-                let termsVC = TermsVC()
-                let navCont = UINavigationController(rootViewController: termsVC)
-                self.navigationController?.present(navCont, animated: true)
-            } else if URL.absoluteString == "privacy" {
-                let privacyVC = PrivacyVC()
-//                let nav = UINavigationController(rootViewController: privacyVC)
-                self.navigationController?.present(privacyVC, animated: true)
-            }
-            return false
+    func textView(_ textView: UITextView, shouldInteractWith URL: URL, in characterRange: NSRange) -> Bool {
+        if URL.absoluteString == "policy" {
+            let termsVC = TermsVC()
+            let navCont = UINavigationController(rootViewController: termsVC)
+            self.navigationController?.present(navCont, animated: true)
+        } else if URL.absoluteString == "privacy" {
+            let privacyVC = PrivacyVC()
+            //                let nav = UINavigationController(rootViewController: privacyVC)
+            self.navigationController?.present(privacyVC, animated: true)
         }
+        return false
+    }
     
     // this code is used to specify what to do with attributed string URL.
 }
