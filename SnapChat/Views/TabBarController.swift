@@ -12,13 +12,10 @@ class TabBarController: UITabBarController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.tabBar.tintColor = .red
-        self.tabBar.unselectedItemTintColor = .green
-        self.tabBar.barTintColor = .black
+
     }
     
     func setUpTabBars(vc:UIViewController) {
-        
         
         // MARK: giving tabBars images and titles
         let firstVC = createNavCont(title: "Home", unselectedImage: UIImage(systemName: "house"), selectedImage: UIImage(systemName: "house.fill"), vc: FirstVC())
@@ -27,6 +24,9 @@ class TabBarController: UITabBarController {
         let fourthVC = createNavCont(title: "Search", unselectedImage: UIImage(systemName: "magnifyingglass.circle"), selectedImage: UIImage(systemName: "magnifyingglass.circle.fill"), vc: FourthVC())
         let fifthVC = createNavCont(title: "Profile", unselectedImage: UIImage(systemName: "person"), selectedImage: UIImage(systemName: "person.fill"), vc: FifthVC())
         
+        self.tabBar.tintColor = .white
+        self.tabBar.unselectedItemTintColor = .gray
+//        self.tabBar.barTintColor = .black
         
         self.setViewControllers([firstVC,secondVC,thirdVC,fourthVC,fifthVC], animated: false)
         self.modalPresentationStyle = .fullScreen

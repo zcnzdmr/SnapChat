@@ -8,6 +8,7 @@ target 'SnapChat' do
 pod 'FirebaseAuth'
 pod 'FirebaseFirestore'
 pod 'FirebaseStorage'
+pod "GoogleSignIn"
 
   # Pods for SnapChat
 

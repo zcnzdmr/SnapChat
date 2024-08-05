@@ -21,8 +21,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         self.window = UIWindow(frame: UIScreen.main.bounds)
         window?.backgroundColor = .systemBackground
         
-        let firstVC = SignInVC()
-        let nav = UINavigationController(rootViewController: firstVC)
+        let signInVC = SignInVC()
+        let nav = UINavigationController(rootViewController: signInVC)
         nav.modalPresentationStyle = .fullScreen
         
         window?.rootViewController = nav

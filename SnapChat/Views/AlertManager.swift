@@ -17,11 +17,6 @@ class AlertManager {
         DispatchQueue.main.async {
             let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
             
-//            let action1 = UIAlertAction(title: "Error", style: .default) { x in
-//                print("action1 selected")
-//            }
-//            alert.addAction(action1)
-            
             let action2 = UIAlertAction(title: "Dismiss", style: .destructive) { UIAlertAction in
                 print("dismiss selected")
             }
@@ -58,7 +53,7 @@ extension AlertManager {
 extension AlertManager {
     
     public static func showRegistrationError(vc: UIViewController, error: Error) {
-        alertFonk(on: vc, title: "Unknown Registration Error", message:"\(error.localizedDescription)" )
+        alertFonk(on: vc, title: "Registration Error", message:"\(error.localizedDescription)" )
     }
     
     public static func showRegistrationErrorMessage(vc:UIViewController, error: Error) {

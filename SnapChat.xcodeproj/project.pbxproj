@@ -32,6 +32,7 @@
 		F58ADC102C57CA5F00F77808 /* PrivacyVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F58ADC0F2C57CA5F00F77808 /* PrivacyVC.swift */; };
 		F5D2B82A2C5A2D90006BFCCC /* AlertManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5D2B8292C5A2D90006BFCCC /* AlertManager.swift */; };
 		F5D2B82C2C5A721F006BFCCC /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = F5D2B82B2C5A721F006BFCCC /* GoogleService-Info.plist */; };
+		F5DE253A2C60C4F9002DE6EA /* SignInVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5DE25392C60C4F9002DE6EA /* SignInVM.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -63,6 +64,7 @@
 		F58ADC0F2C57CA5F00F77808 /* PrivacyVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrivacyVC.swift; sourceTree = "<group>"; };
 		F5D2B8292C5A2D90006BFCCC /* AlertManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertManager.swift; sourceTree = "<group>"; };
 		F5D2B82B2C5A721F006BFCCC /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		F5DE25392C60C4F9002DE6EA /* SignInVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInVM.swift; sourceTree = "<group>"; };
 		F8540340C28891074BA08563 /* Pods-SnapChat.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SnapChat.debug.xcconfig"; path = "Target Support Files/Pods-SnapChat/Pods-SnapChat.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -148,6 +150,7 @@
 			isa = PBXGroup;
 			children = (
 				F5606BFE2C5B762C0019DE80 /* SignUpVM.swift */,
+				F5DE25392C60C4F9002DE6EA /* SignInVM.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -312,6 +315,7 @@
 				F5606C012C5B76490019DE80 /* Repo.swift in Sources */,
 				9ADAE6852C5689F700D6B7E9 /* SignInVC.swift in Sources */,
 				F5606C102C5BC2860019DE80 /* FourthVC.swift in Sources */,
+				F5DE253A2C60C4F9002DE6EA /* SignInVM.swift in Sources */,
 				9ADAE68C2C568B3300D6B7E9 /* CustomButton.swift in Sources */,
 				F5D2B82A2C5A2D90006BFCCC /* AlertManager.swift in Sources */,
 				9ADAE6872C568A9500D6B7E9 /* SignUpVC.swift in Sources */,

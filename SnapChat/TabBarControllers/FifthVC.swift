@@ -13,9 +13,6 @@ class FifthVC: UIViewController {
         super.viewDidLoad()
         
         setUpUIs()
-
-
-        // Do any additional setup after loading the view.
     }
     
 
@@ -23,7 +20,8 @@ class FifthVC: UIViewController {
         let buton1 = CustomButton(title: "Deneme", buttonType: .big, hasbackground: true)
         
         let righBarButton = UIBarButtonItem(image: UIImage(systemName: "gear"), style: .plain, target: self, action: #selector(didTapRightBarButton))
-        self.navigationItem.rightBarButtonItem?.tintColor = .black
+        
+        self.navigationItem.rightBarButtonItem?.tintColor = .red
         
         self.navigationItem.rightBarButtonItem = righBarButton
         
@@ -39,6 +37,11 @@ class FifthVC: UIViewController {
     
     @objc func didTapRightBarButton() {
         print("tapped")
+//        self.modalPresentationStyle = .fullScreen
+//        self.present(SignInVC(), animated: false) {
+//            print("navigating to SignInVC")
+//        }
+        
+        self.navigationController?.pushViewController(SignInVC(), animated: true)
     }
-
 }

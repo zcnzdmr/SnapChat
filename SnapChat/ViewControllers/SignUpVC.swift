@@ -47,6 +47,7 @@ class SignUpVC: UIViewController {
         extraComponents()
         setUpUI()
         addTargetsToButtons()
+
     }
     
     private func addTargetsToButtons() {
@@ -82,7 +83,8 @@ class SignUpVC: UIViewController {
 //                            homeVC.modalPresentationStyle = .fullScreen
 //                            self.present(homeVC, animated: true, completion: nil)
                             
-                            TabBars.tabBars(vc: self)
+                            TabBarController().setUpTabBars(vc: self)
+                            
                         }
                     }else {
                         

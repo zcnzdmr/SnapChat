@@ -13,7 +13,7 @@ class FirstVC: UIViewController {
         super.viewDidLoad()
 
         view.backgroundColor = .systemBackground
-        self.tabBarController?.tabBar.backgroundColor = .gray.withAlphaComponent(0.8) // determines the background color of tabBar
+        self.tabBarController?.tabBar.backgroundColor = .black.withAlphaComponent(0.8) // determines the background color of tabBar
     }
     
     private func setUpUIs() {

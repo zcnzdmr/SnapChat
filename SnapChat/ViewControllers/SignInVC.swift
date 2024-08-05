@@ -15,6 +15,8 @@ class SignInVC: UIViewController {
         view.endEditing(true)
     }
     
+    let ViewModel = SignInVM()
+    
     // MARK: UI Components
     private let headerView = AuthHeaderView(title: "Sign In", subtitle: "Sign in to your account")
     private let emailTF = CustomTextField(textFieldType: .email)
@@ -30,7 +32,9 @@ class SignInVC: UIViewController {
         buttonsTarget()
     }
     
-//  
+    override func viewWillAppear(_ animated: Bool) {
+        self.navigationItem.hidesBackButton = true // it is used to hide backbutton after navigating from TabBars
+    }
     
     private func buttonsTarget() {
         
@@ -43,11 +47,38 @@ class SignInVC: UIViewController {
         // TODO: Add user signing in function of Firebase and if statements for alerts
 //        self.navigationController?.pushViewController(HomePage(), animated: true)
         
-//        AlertManager.showInvalidEmailAlert(vc: self)
-//        TabBars.tabBars(vc: self)
-        let tabBar = TabBarController()
-        tabBar.setUpTabBars(vc: self)
-        
+        if emailTF.text == nil || emailTF.text == "" {
+            
+            AlertManager.showEmptyEmailError(vc: self)
+          
+        }else if password.text == nil || password.text == ""{
+            
+            AlertManager.showEmptyPasswordError(vc: self)
+        }else {
+            
+            if let email = emailTF.text, let password = password.text {
+                self.ViewModel.signInWithEmail(email: email, password: password) { success, error in
+                    
+                    if success {
+                        DispatchQueue.main.async {
+                            
+                            let tab = TabBarController()
+                            tab.setUpTabBars(vc: self)
+                        }
+                    }else{
+                        
+                        if let error = error {
+                            AlertManager.showRegistrationError(vc: self, error: error)
+                        }
+                    }
+                    
+                }
+                
+                
+            }
+            
+
+        }
     }
     
     @objc func didTapsigUp() {
