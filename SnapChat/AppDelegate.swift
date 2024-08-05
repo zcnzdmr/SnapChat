@@ -7,11 +7,19 @@
 
 import UIKit
 import FirebaseCore
+import GoogleSignIn
 
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
     
     var window: UIWindow?
+    
+    
+    func application(_ app: UIApplication,  // This code block is added to enable GoogleSignIn methods
+                     open url: URL,
+                     options: [UIApplication.OpenURLOptionsKey: Any] = [:]) -> Bool {
+      return GIDSignIn.sharedInstance.handle(url)
+    }
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         

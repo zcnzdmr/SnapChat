@@ -7,6 +7,8 @@
 
 import Foundation
 import FirebaseAuth
+import GoogleSignIn
+import FirebaseCore
 
 
 class Repo {
@@ -26,7 +28,7 @@ class Repo {
             }
         }
     }
-
+    
     
     func signInWithEmail(email:String, password:String, completion: @escaping (Bool,Error?) -> Void) {
         Auth.auth().signIn(withEmail: email, password: password) { (authresult, error) in
@@ -38,6 +40,36 @@ class Repo {
             }else {
                 
                 completion(true,nil)
+            }
+        }
+    }
+    
+    
+    
+    func googleSingIn(completion: @escaping (Bool,Error?) -> Void) {
+        
+        guard let clientID = FirebaseApp.app()?.options.clientID else { return }
+        
+        // Create Google Sign In configuration object.
+        let config = GIDConfiguration(clientID: clientID)
+        GIDSignIn.sharedInstance.configuration = config
+        
+        // Start the sign in flow!
+        GIDSignIn.sharedInstance.signIn(withPresenting: SignInVC()) { result, error in
+            
+            if error == nil {
+                
+                completion(true,nil)
+                guard let user = result?.user, let idToken = user.idToken?.tokenString else {
+                    // ...
+                    return completion(false,error)
+                }
+                
+                let credential = GoogleAuthProvider.credential(withIDToken: idToken,
+                                                               accessToken: user.accessToken.tokenString)
+                
+                // ...
+                
             }
         }
     }

@@ -17,6 +17,9 @@ class SignUpVM {
         
         repo.signUpWithEmail(email: email, username: username, password: password, completion:  completion)
     }
-
+    
+    func googleSingIn(completion: @escaping (Bool,Error?) -> Void) {
+        repo.googleSingIn(completion: completion)
+    }
 }
 
