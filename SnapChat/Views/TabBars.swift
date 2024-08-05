@@ -30,8 +30,17 @@ class TabBars {
         fifthVC.tabBarItem = 
         UITabBarItem(title: "Profile", image: UIImage(systemName: "person"),selectedImage: UIImage(systemName: "person.fill"))
         
-        tabbar.viewControllers = [firstVC,secondVC,thirdVC,fourthVC,fifthVC]
+        tabbar.tabBar.unselectedItemTintColor = .gray // specify unselected item color
+        tabbar.tabBar.tintColor = .white.withAlphaComponent(0.8 ) // specify selected tab Bar item color
         
+        tabbar.selectedIndex = 2
+        
+        // FIXME: It doesnt work
+//        tabbar.tabBar.barTintColor = .purple
+
+//        
+//        tabbar.viewControllers = [firstVC,secondVC,thirdVC,fourthVC,fifthVC]
+//        tabbar.setViewControllers([firstVC,secondVC,thirdVC,fourthVC,fifthVC], animated: true)
         return tabbar
         
     }
@@ -45,3 +54,4 @@ extension TabBars {
         vc.present(tabBar, animated: true)
     }
 }
+

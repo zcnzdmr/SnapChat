@@ -12,12 +12,11 @@ class FirstVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        view.backgroundColor = .systemBlue
-        self.tabBarController?.tabBar.backgroundColor = .secondarySystemBackground
+        view.backgroundColor = .systemBackground
+        self.tabBarController?.tabBar.backgroundColor = .gray.withAlphaComponent(0.8) // determines the background color of tabBar
     }
     
     private func setUpUIs() {
         
     }
-
 }

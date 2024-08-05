@@ -14,6 +14,7 @@ class FifthVC: UIViewController {
         
         setUpUIs()
 
+
         // Do any additional setup after loading the view.
     }
     
@@ -21,7 +22,9 @@ class FifthVC: UIViewController {
     private func setUpUIs() {
         let buton1 = CustomButton(title: "Deneme", buttonType: .big, hasbackground: true)
         
-        let righBarButton = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(didTapRightBarButton))
+        let righBarButton = UIBarButtonItem(image: UIImage(systemName: "gear"), style: .plain, target: self, action: #selector(didTapRightBarButton))
+        self.navigationItem.rightBarButtonItem?.tintColor = .black
+        
         self.navigationItem.rightBarButtonItem = righBarButton
         
         view.addSubview(buton1)

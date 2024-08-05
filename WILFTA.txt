@@ -106,7 +106,18 @@ This is the link of this lesson : https://www.youtube.com/watch?v=6h5TrAtyQi8&li
 
 	18. Closures or completion handlers... We can use a closure as a parameter of a function. We have mentioned the fact that functions can take another function as a parameter. And closures are unnamed functions. So we can give a closure to function as a parameter. At this point, despite the fact that we don't see it , there is a prefix "non-escaping" which means that this closure cannot be used outside of this function. However there are two types of closures that different from each other. First is conventional closure that has an invisible prefix but on the other hand, if we want to use a closure outside of a function we have to put a prefix "@escaping". With this prefix, the closure that we have given to function as parameter can be used outside of function anywhere we call our function. ALSO this " @escaping closure : (alb) -> Void " is kept in memory even after the function is done executing. Which means that we can use this closure's result on another ViewController or asynchronous process. I have used this @escaping closure in Repo and SignUpVC to navigate to HomePage according to result of authentication. (This link serves a good info. About closure  " https://fozoglu.me/swiftte-escaping-ve-non-escaping/ ")
 
+	19. You learnt to change the color of unselected bar items. While they are unselected , you are specifying the color of them. 
 
+	        "(self).tabBar.unselectedItemTintColor = .black"  ------> with this code you can determine the color of unselected items of tabBar. You can also add opaqueness by writing        
+		 "tabbar.tabBar.unselectedItemTintColor = .black.withAlphaComponent(0.6)"       ---> it provides some transparency to tabBar items' color. 
+
+	+Plus Note: " tabbar.tabBar.tintColor = .systemRed " 		---> this code determines the color of selected tabBar items. When you tap a tabBar item , it is painted this color. 
+
+				"        self.tabBarController?.tabBar.backgroundColor = .green "  			----> this code determines the background color of tabBar. Interestingly "self.tabbar.barTintColor = .green" is shown in tutorial. 
+
+	19.  You used to create tabBar items in a different way before encountering this guy who generated tabBars as a class and then call it from another ViewControllers. Also this guy use 
+
+		 " self.setViewControllers([firstVC,secondVC,thirdVC,fourthVC,fifthVC], animated: false)"  this code to add ViewControllers to tabBar items. You can sort the creation of tabBars like this . First you should produce navigation Controller  with (rootViewController) > then add tabBarItem to this navigation controller by writing  navCont.tabBarItem = UITabBarItem(...) this code > then you are adding your ViewControllers to this nav. Controller along with tabBar items > last you set.         self.setViewControllers([firstVC,secondVC,thirdVC,fourthVC,fifthVC], animated: false)  you set ViewControllers to tabBar items. You did this within TabBarController.swift file you can check all of them from that file. This way is neater. 
 
 
 

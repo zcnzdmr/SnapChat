@@ -43,11 +43,11 @@ class SignInVC: UIViewController {
         // TODO: Add user signing in function of Firebase and if statements for alerts
 //        self.navigationController?.pushViewController(HomePage(), animated: true)
         
-        AlertManager.showInvalidEmailAlert(vc: self)
+//        AlertManager.showInvalidEmailAlert(vc: self)
+//        TabBars.tabBars(vc: self)
+        let tabBar = TabBarController()
+        tabBar.setUpTabBars(vc: self)
         
-//        let homeVC = HomePage()
-//        homeVC.modalPresentationStyle = .fullScreen
-//        self.present(homeVC, animated: false, completion: nil) // this is for modal presentation
     }
     
     @objc func didTapsigUp() {
