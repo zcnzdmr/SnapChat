@@ -7,6 +7,9 @@
 
 import UIKit
 import FirebaseAuth
+import GoogleSignIn
+import FirebaseCore
+
 
 class SignUpVC: UIViewController {
     
@@ -33,8 +36,9 @@ class SignUpVC: UIViewController {
     private let passwordTF = CustomTextField(textFieldType: .password)
     private let signUpButton = CustomButton(title: "Sign Up", buttonType: .big,hasbackground: true)
     private let signInButton = CustomButton(title: "Already have an account? Sign In.", buttonType: .medium)
+    private let signInGoogle = GIDSignInButton()
     
-    //
+    
     //    override func loadView() {
     //        // this function is launched before viewDidLoad
     //        print("s")
@@ -54,7 +58,7 @@ class SignUpVC: UIViewController {
         
         signUpButton.addTarget(self, action: #selector(didTapSignUp), for: .touchUpInside)
         signInButton.addTarget(self, action: #selector(didTapSignIn), for: .touchUpInside)
-        
+        signInGoogle.addTarget(self, action: #selector(didTapGoogleButton), for: .touchUpInside)
     }
     
     @objc func  didTapSignUp() {
@@ -96,7 +100,22 @@ class SignUpVC: UIViewController {
                 }
             }
         }
-        //        self.navigationController?.show(HomePage(), sender: nil)
+    }
+    
+    @objc func didTapGoogleButton() {
+        
+        print("google button tapped")
+        
+        viewModel.googleSingIn { success, error in
+            
+            if success {
+                print("success")
+                TabBarController().setUpTabBars(vc: self)
+            }else{
+                AlertManager.showRandomAlert(vc: self)
+            }
+            
+        }
     }
     
     @objc func didTapSignIn() {
@@ -135,6 +154,7 @@ class SignUpVC: UIViewController {
         self.view.addSubview(signUpButton)
         self.view.addSubview(signInButton)
         self.view.addSubview(textView1)
+        self.view.addSubview(signInGoogle)
         
         
         authView.translatesAutoresizingMaskIntoConstraints = false
@@ -144,6 +164,7 @@ class SignUpVC: UIViewController {
         signUpButton.translatesAutoresizingMaskIntoConstraints = false
         signInButton.translatesAutoresizingMaskIntoConstraints = false
         textView1.translatesAutoresizingMaskIntoConstraints = false
+        signInGoogle.translatesAutoresizingMaskIntoConstraints = false
         
         
         NSLayoutConstraint.activate([
@@ -185,7 +206,12 @@ class SignUpVC: UIViewController {
             textView1.centerXAnchor.constraint(equalTo: self.view.centerXAnchor),
             textView1.topAnchor.constraint(equalTo: signUpButton.bottomAnchor, constant: 8),
             textView1.widthAnchor.constraint(equalTo: self.view.widthAnchor, multiplier: 0.9),
-            textView1.heightAnchor.constraint(equalTo: self.view.heightAnchor, multiplier: 0.06)
+            textView1.heightAnchor.constraint(equalTo: self.view.heightAnchor, multiplier: 0.06),
+         
+            signInGoogle.centerXAnchor.constraint(equalTo: self.view.centerXAnchor),
+            signInGoogle.topAnchor.constraint(equalTo: self.textView1.bottomAnchor, constant: 60),
+            signInGoogle.widthAnchor.constraint(equalTo: self.view.widthAnchor, multiplier: 0.6),
+            signInGoogle.heightAnchor.constraint(equalTo: self.view.heightAnchor, multiplier: 0.06)
             
         ])
     }

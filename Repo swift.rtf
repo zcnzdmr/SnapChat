@@ -1,0 +1,197 @@
+{\rtf1\ansi\ansicpg1254\cocoartf2761
+\cocoatextscaling0\cocoaplatform0{\fonttbl\f0\fnil\fcharset0 Menlo-Bold;\f1\fnil\fcharset0 Menlo-Regular;}
+{\colortbl;\red255\green255\blue255;\red252\green95\blue163;\red31\green31\blue36;\red255\green255\blue255;
+\red93\green216\blue255;\red108\green121\blue134;\red146\green161\blue177;\red65\green161\blue192;\red208\green168\blue255;
+\red158\green241\blue221;\red103\green183\blue164;\red103\green183\blue164;\red208\green168\blue255;\red161\green103\blue230;
+\red161\green103\blue230;\red252\green106\blue93;\red208\green191\blue105;}
+{\*\expandedcolortbl;;\csgenericrgb\c98839\c37355\c63833;\csgenericrgb\c12054\c12284\c14131;\csgenericrgb\c100000\c100000\c100000\c85000;
+\csgenericrgb\c36295\c84643\c99897;\csgenericrgb\c42394\c47462\c52518;\csgenericrgb\c57255\c63137\c69412;\csgenericrgb\c25490\c63137\c75294;\csgenericrgb\c81681\c65692\c99927;
+\csgenericrgb\c61961\c94510\c86667;\csgenericrgb\c40392\c71765\c64314;\csgenericrgb\c40538\c71705\c64209;\csgenericrgb\c81569\c65882\c100000;\csgenericrgb\c63232\c40219\c90115;
+\csgenericrgb\c63137\c40392\c90196;\csgenericrgb\c98912\c41558\c36568;\csgenericrgb\c81498\c74939\c41233;}
+\paperw11900\paperh16840\margl1440\margr1440\vieww37900\viewh17980\viewkind0
+\deftab939
+\pard\tx939\pardeftab939\partightenfactor0
+
+\f0\b\fs38 \cf2 \cb3 import
+\f1\b0 \cf4  Foundation\
+
+\f0\b \cf2 import
+\f1\b0 \cf4  FirebaseAuth\
+
+\f0\b \cf2 import
+\f1\b0 \cf4  GoogleSignIn\
+
+\f0\b \cf2 import
+\f1\b0 \cf4  FirebaseCore\
+\
+
+\f0\b \cf2 class
+\f1\b0 \cf4  \cf5 Repo\cf4  \{\
+    \
+    \cf6 // 
+\f0\b \cf7 MARK: SignUp with email
+\f1\b0 \cf4 \
+    
+\f0\b \cf2 func
+\f1\b0 \cf4  \cf8 signUpWithEmail\cf4 (\cf8 email\cf4 : \cf9 String\cf4 , \cf8 username\cf4 : \cf9 String\cf4 , \cf8 password\cf4 : \cf9 String\cf4 , \cf8 completion\cf4 : 
+\f0\b \cf2 @escaping
+\f1\b0 \cf4  (\cf9 Bool\cf4 , \cf9 Error\cf4 ?) -> \cf9 Void\cf4 ) \{\
+        \cf10 Auth\cf4 .\cf11 auth\cf4 ().\cf11 createUser\cf4 (\cf11 withEmail\cf4 : email, \cf11 password\cf4 : password) \{ authDataResult, error 
+\f0\b \cf2 in
+\f1\b0 \cf4 \
+            
+\f0\b \cf2 if
+\f1\b0 \cf4  
+\f0\b \cf2 let
+\f1\b0 \cf4  error = error \{\
+                completion(
+\f0\b \cf2 false
+\f1\b0 \cf4 , error)\
+            \} 
+\f0\b \cf2 else
+\f1\b0 \cf4  \{\
+                completion(
+\f0\b \cf2 true
+\f1\b0 \cf4 , 
+\f0\b \cf2 nil
+\f1\b0 \cf4 )\
+            \}\
+        \}\
+    \}\
+    \
+    
+\f0\b \cf2 func
+\f1\b0 \cf4  \cf8 signInWithEmail\cf4 (\cf8 email\cf4 : \cf9 String\cf4 , \cf8 password\cf4 : \cf9 String\cf4 , \cf8 completion\cf4 : 
+\f0\b \cf2 @escaping
+\f1\b0 \cf4  (\cf9 Bool\cf4 , \cf9 Error\cf4 ?) -> \cf9 Void\cf4 ) \{\
+        \cf10 Auth\cf4 .\cf11 auth\cf4 ().\cf11 signIn\cf4 (\cf11 withEmail\cf4 : email, \cf11 password\cf4 : password) \{ (authResult, error) 
+\f0\b \cf2 in
+\f1\b0 \cf4 \
+            
+\f0\b \cf2 if
+\f1\b0 \cf4  
+\f0\b \cf2 let
+\f1\b0 \cf4  error = error \{\
+                completion(
+\f0\b \cf2 false
+\f1\b0 \cf4 , error)\
+            \} 
+\f0\b \cf2 else
+\f1\b0 \cf4  \{\
+                completion(
+\f0\b \cf2 true
+\f1\b0 \cf4 , 
+\f0\b \cf2 nil
+\f1\b0 \cf4 )\
+            \}\
+        \}\
+    \}\
+    \
+    \
+    \cf6 // 
+\f0\b \cf7 MARK: Google Sign up part
+\f1\b0 \cf4 \
+    
+\f0\b \cf2 func
+\f1\b0 \cf4  \cf8 googleSignIn\cf4 (\cf8 completion\cf4 : 
+\f0\b \cf2 @escaping
+\f1\b0 \cf4  (\cf9 Bool\cf4 , \cf9 Error\cf4 ?) -> \cf9 Void\cf4 ) \{\
+        \
+        
+\f0\b \cf2 guard
+\f1\b0 \cf4  
+\f0\b \cf2 let
+\f1\b0 \cf4  clientID = \cf10 FirebaseApp\cf4 .\cf11 app\cf4 ()?.\cf12 options\cf4 .\cf12 clientID\cf4  
+\f0\b \cf2 else
+\f1\b0 \cf4  \{ 
+\f0\b \cf2 return
+\f1\b0 \cf4  \}\
+        \
+        
+\f0\b \cf2 let
+\f1\b0 \cf4  config = \cf10 GIDConfiguration\cf4 (\cf11 clientID\cf4 : clientID)\
+        \cf10 GIDSignIn\cf4 .\cf12 sharedInstance\cf4 .\cf12 configuration\cf4  = config\
+        \
+        
+\f0\b \cf2 guard
+\f1\b0 \cf4  
+\f0\b \cf2 let
+\f1\b0 \cf4  presentingVC = \cf13 UIApplication\cf4 .\cf14 shared\cf4 .\cf14 windows\cf4 .\cf14 first\cf4 ?.\cf14 rootViewController\cf4  
+\f0\b \cf2 else
+\f1\b0 \cf4  \{\
+            completion(
+\f0\b \cf2 false
+\f1\b0 \cf4 , \cf13 NSError\cf4 (\cf15 domain\cf4 : \cf16 "GoogleSignInError"\cf4 , \cf15 code\cf4 : -\cf17 1\cf4 , \cf15 userInfo\cf4 : [\cf14 NSLocalizedDescriptionKey\cf4 : \cf16 "Presenting View Controller not found"\cf4 ]))\
+            
+\f0\b \cf2 return
+\f1\b0 \cf4 \
+        \}\
+        \
+        \cf10 GIDSignIn\cf4 .\cf12 sharedInstance\cf4 .\cf11 signIn\cf4 (\cf11 withPresenting\cf4 : presentingVC) \{ result, error 
+\f0\b \cf2 in
+\f1\b0 \cf4 \
+            
+\f0\b \cf2 if
+\f1\b0 \cf4  
+\f0\b \cf2 let
+\f1\b0 \cf4  error = error \{\
+                \cf15 print\cf4 (\cf16 "Google Sign-In Error: \cf4 \\(error.\cf14 localizedDescription\cf4 )\cf16 "\cf4 )\
+                completion(
+\f0\b \cf2 false
+\f1\b0 \cf4 , error)\
+                
+\f0\b \cf2 return
+\f1\b0 \cf4 \
+            \}\
+            \
+            
+\f0\b \cf2 let
+\f1\b0 \cf4  accessToken = result!.\cf14 user\cf4 .\cf12 accessToken\cf4 .\cf12 tokenString\cf4 \
+            \
+            
+\f0\b \cf2 guard
+\f1\b0 \cf4  
+\f0\b \cf2 let
+\f1\b0 \cf4  user = result?.\cf14 user\cf4 , 
+\f0\b \cf2 let
+\f1\b0 \cf4  idToken = user.\cf12 idToken\cf4 ?.\cf12 tokenString\cf4  
+\f0\b \cf2 else
+\f1\b0 \cf4  \{\
+                completion(
+\f0\b \cf2 false
+\f1\b0 \cf4 , \cf13 NSError\cf4 (\cf15 domain\cf4 : \cf16 "GoogleSignInError"\cf4 , \cf15 code\cf4 : -\cf17 2\cf4 , \cf15 userInfo\cf4 : [\cf14 NSLocalizedDescriptionKey\cf4 : \cf16 "Failed to get user or token"\cf4 ]))\
+                
+\f0\b \cf2 return
+\f1\b0 \cf4 \
+            \}\
+            \
+            
+\f0\b \cf2 let
+\f1\b0 \cf4  credential = \cf10 GoogleAuthProvider\cf4 .\cf11 credential\cf4 (\cf11 withIDToken\cf4 : idToken, \cf11 accessToken\cf4 : accessToken)\
+            \
+            \cf10 Auth\cf4 .\cf11 auth\cf4 ().\cf11 signIn\cf4 (\cf11 with\cf4 : credential) \{ authResult, error 
+\f0\b \cf2 in
+\f1\b0 \cf4 \
+                
+\f0\b \cf2 if
+\f1\b0 \cf4  
+\f0\b \cf2 let
+\f1\b0 \cf4  error = error \{\
+                    completion(
+\f0\b \cf2 false
+\f1\b0 \cf4 , error)\
+                \} 
+\f0\b \cf2 else
+\f1\b0 \cf4  \{\
+                    completion(
+\f0\b \cf2 true
+\f1\b0 \cf4 , 
+\f0\b \cf2 nil
+\f1\b0 \cf4 )\
+                \}\
+            \}\
+        \}\
+    \}\
+\}\
+\
+}

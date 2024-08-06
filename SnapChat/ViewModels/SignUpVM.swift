@@ -19,7 +19,7 @@ class SignUpVM {
     }
     
     func googleSingIn(completion: @escaping (Bool,Error?) -> Void) {
-        repo.googleSingIn(completion: completion)
+        repo.googleSignIn(completion: completion)
     }
 }
 

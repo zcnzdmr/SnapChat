@@ -129,3 +129,8 @@ extension AlertManager {
     }
 }
 
+extension AlertManager {
+    public static func showGeneralAlert(on vc:UIViewController, title:String,message:String?) {
+        alertFonk(on: vc, title: title, message: message)
+    }
+}
