@@ -119,6 +119,14 @@ This is the link of this lesson : https://www.youtube.com/watch?v=6h5TrAtyQi8&li
 
 		 " self.setViewControllers([firstVC,secondVC,thirdVC,fourthVC,fifthVC], animated: false)"  this code to add ViewControllers to tabBar items. You can sort the creation of tabBars like this . First you should produce navigation Controller  with (rootViewController) > then add tabBarItem to this navigation controller by writing  navCont.tabBarItem = UITabBarItem(...) this code > then you are adding your ViewControllers to this nav. Controller along with tabBar items > last you set.         self.setViewControllers([firstVC,secondVC,thirdVC,fourthVC,fifthVC], animated: false)  you set ViewControllers to tabBar items. You did this within TabBarController.swift file you can check all of them from that file. This way is neater. 
 
+	20. There was a problem as to not showing tabBar while navigating from fifthVC to SignInVC. Because no matter what presentation you use such as .present( a full screen version), .navigationController.pushViewController(....) or .show(...) , it didn't make a difference. There were tabBar items on SignInVC.  And you didn't know how to hide tabBar items when user logged out. Here is the code : 
+	
+    override func viewWillAppear(_ animated: Bool) {
+        self.tabBarController?.tabBar.isHidden = true
+    }
+
+			-------> this code is attached to inside of willAppear method and conceal the tabBar items on this page.
+
 
 
 

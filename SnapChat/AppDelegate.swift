@@ -36,7 +36,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let signInVC = SignInVC()
         let nav = UINavigationController(rootViewController: signInVC)
         nav.modalPresentationStyle = .fullScreen
-        
+
         window?.rootViewController = nav
         window?.makeKeyAndVisible()
         

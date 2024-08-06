@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import FirebaseAuth
 
 class SignInVC: UIViewController {
     
@@ -28,12 +29,22 @@ class SignInVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        self.setUpUI()
+        currentUserCheck()
+        setUpUI()
         buttonsTarget()
     }
     
     override func viewWillAppear(_ animated: Bool) {
         self.navigationItem.hidesBackButton = true // it is used to hide backbutton after navigating from TabBars
+        self.tabBarController?.tabBar.isHidden = true
+    }
+    
+    
+    func currentUserCheck() {
+        if Auth.auth().currentUser != nil {
+            let tabBar = TabBarController()
+            tabBar.setUpTabBars(vc: self)
+        }
     }
     
     private func buttonsTarget() {

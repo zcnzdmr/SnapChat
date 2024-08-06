@@ -33,6 +33,7 @@
 		F5D2B82A2C5A2D90006BFCCC /* AlertManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5D2B8292C5A2D90006BFCCC /* AlertManager.swift */; };
 		F5DE253A2C60C4F9002DE6EA /* SignInVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5DE25392C60C4F9002DE6EA /* SignInVM.swift */; };
 		F5DE253C2C60F130002DE6EA /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = F5DE253B2C60F130002DE6EA /* GoogleService-Info.plist */; };
+		F5F0F7092C6246FD0035FCB6 /* FifthVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5F0F7082C6246FD0035FCB6 /* FifthVM.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -65,6 +66,7 @@
 		F5D2B8292C5A2D90006BFCCC /* AlertManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertManager.swift; sourceTree = "<group>"; };
 		F5DE25392C60C4F9002DE6EA /* SignInVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInVM.swift; sourceTree = "<group>"; };
 		F5DE253B2C60F130002DE6EA /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		F5F0F7082C6246FD0035FCB6 /* FifthVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FifthVM.swift; sourceTree = "<group>"; };
 		F8540340C28891074BA08563 /* Pods-SnapChat.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SnapChat.debug.xcconfig"; path = "Target Support Files/Pods-SnapChat/Pods-SnapChat.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -151,6 +153,7 @@
 			children = (
 				F5606BFE2C5B762C0019DE80 /* SignUpVM.swift */,
 				F5DE25392C60C4F9002DE6EA /* SignInVM.swift */,
+				F5F0F7082C6246FD0035FCB6 /* FifthVM.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -311,6 +314,7 @@
 				9ADAE68A2C568B2000D6B7E9 /* CustomTextField.swift in Sources */,
 				9ADAE68E2C568CF800D6B7E9 /* ForgotVC.swift in Sources */,
 				F58ADC102C57CA5F00F77808 /* PrivacyVC.swift in Sources */,
+				F5F0F7092C6246FD0035FCB6 /* FifthVM.swift in Sources */,
 				9ADAE6902C568DD900D6B7E9 /* AuthHeaderView.swift in Sources */,
 				F5606C012C5B76490019DE80 /* Repo.swift in Sources */,
 				9ADAE6852C5689F700D6B7E9 /* SignInVC.swift in Sources */,

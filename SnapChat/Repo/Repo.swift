@@ -16,6 +16,8 @@ class Repo {
         }
     }
     
+    
+    // MARK: SignIn with email
     func signInWithEmail(email: String, password: String, completion: @escaping (Bool, Error?) -> Void) {
         Auth.auth().signIn(withEmail: email, password: password) { (authResult, error) in
             if let error = error {
@@ -23,6 +25,19 @@ class Repo {
             } else {
                 completion(true, nil)
             }
+        }
+    }
+    
+    func logOutWithEmail(completion:(Bool,Error?) -> Void) {
+        
+        let firebaseAuth = Auth.auth()
+        
+        do {
+            try firebaseAuth.signOut()
+            completion(true,nil)
+        } catch let signOutError as NSError {
+            completion(false,signOutError)
+            print("Error signing out: %@", signOutError)
         }
     }
     
@@ -35,9 +50,7 @@ class Repo {
         let config = GIDConfiguration(clientID: clientID)
         GIDSignIn.sharedInstance.configuration = config
         
-        
-//        guard let presentingVC = SignUpVC() else{ completion(false,NSError(domain: <#T##String#>, code: <#T##Int#>, userInfo: <#T##[String : Any]?#>))}
-        
+        // this was the code that rescue the application after adding Google SignIn method
         guard let presentingVC = UIApplication.shared.windows.first?.rootViewController else {
             completion(false, NSError(domain: "GoogleSignInError", code: -1, userInfo: [NSLocalizedDescriptionKey: "Presenting View Controller not found"]))
             return
