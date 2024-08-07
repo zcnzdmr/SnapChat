@@ -44,6 +44,10 @@ class SignInVC: UIViewController {
         if Auth.auth().currentUser != nil {
             let tabBar = TabBarController()
             tabBar.setUpTabBars(vc: self)
+            
+            if let cUser = Auth.auth().currentUser {
+                print(cUser.email!)
+            }
         }
     }
     

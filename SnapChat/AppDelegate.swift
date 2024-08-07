@@ -17,18 +17,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         
         FirebaseApp.configure()
-        
-        // MARK: 
-        GIDSignIn.sharedInstance.restorePreviousSignIn { user, error in
-            
-            if error != nil || user == nil {
-                AlertManager.showGeneralAlert(on: SignUpVC(), title: "Something goes wrong", message: "\(error!.localizedDescription)")
-            }else{
-                let tabBar = TabBarController()
-                tabBar.setUpTabBars(vc: SignUpVC())
-            }
-        }
-        
             
         self.window = UIWindow(frame: UIScreen.main.bounds)
         window?.backgroundColor = .systemBackground

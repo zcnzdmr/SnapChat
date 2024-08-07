@@ -49,7 +49,7 @@ But you should understand the fact that loadView() func is launched before viewD
 		func textView(_ textView: UITextView, shouldInteractWith URL: URL, in characterRange: NSRange) -> Bool {
             	if URL.absoluteString == "policy" {															
 
-with this function which is one of the UITextViewDelegate function, you are deciding what to do with NSMutableAttributedString. If you write if URL.link == "..." , you have to go to a web browser directly , if you want to make something different with this attributed string you should write .obsoluteString == "...". You created this in the SignUpVC. You check from there. But don't forget to equal delegate of variable of UITextView to self !
+with this function which is one of the UITextViewDelegate function, you are deciding what to do with NSMutableAttributedString. If you write URL.link == "..." , you have to go to a web browser directly , if you want to make something different with this attributed string you should write .obsoluteString == "...". You created this in the SignUpVC. You check from there. But don't forget to equal delegate of variable of UITextView to self !
 
 
 	11. If you write 

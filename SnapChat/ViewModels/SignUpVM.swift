@@ -21,5 +21,9 @@ class SignUpVM {
     func googleSingIn(completion: @escaping (Bool,Error?) -> Void) {
         repo.googleSignIn(completion: completion)
     }
+    
+    func faceBookSignIn(completion: @escaping (Bool,Error?) -> Void) {
+        repo.faceBookSignIn(completion: completion)
+    }
 }
 

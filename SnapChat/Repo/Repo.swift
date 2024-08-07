@@ -2,8 +2,13 @@ import Foundation
 import FirebaseAuth
 import GoogleSignIn
 import FirebaseCore
+import WebKit
 
 class Repo {
+    
+    init() {
+        
+    }
     
     // MARK: SignUp with email
     func signUpWithEmail(email: String, username: String, password: String, completion: @escaping (Bool, Error?) -> Void) {
@@ -81,5 +86,10 @@ class Repo {
             }
         }
     }
+    
+    
+    func faceBookSignIn(completion: @escaping (Bool,Error?) -> Void) {
+        
+    }
 }
-
+    

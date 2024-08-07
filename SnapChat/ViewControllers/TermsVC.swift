@@ -13,13 +13,6 @@ class TermsVC: UIViewController,WKUIDelegate {
 //    let texViewDeneme = UITextView()
     var webView : WKWebView!
     
-    
-//    override func loadView() {
-//        let webConfiguration = WKWebViewConfiguration()
-//        webView = WKWebView(frame: .zero, configuration: webConfiguration)
-//        webView.uiDelegate = self
-//        view = webView
-//    }
 
     override func viewDidLoad() {
         super.viewDidLoad()

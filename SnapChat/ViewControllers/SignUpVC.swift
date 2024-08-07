@@ -37,6 +37,7 @@ class SignUpVC: UIViewController {
     private let signUpButton = CustomButton(title: "Sign Up", buttonType: .big,hasbackground: true)
     private let signInButton = CustomButton(title: "Already have an account? Sign In.", buttonType: .medium)
     private let signInGoogle = GIDSignInButton()
+    private let faceBookSignInButton = CustomButton(title: "GitHub", buttonType: .medium, hasbackground: true)
     
     
     //    override func loadView() {
@@ -59,6 +60,7 @@ class SignUpVC: UIViewController {
         signUpButton.addTarget(self, action: #selector(didTapSignUp), for: .touchUpInside)
         signInButton.addTarget(self, action: #selector(didTapSignIn), for: .touchUpInside)
         signInGoogle.addTarget(self, action: #selector(didTapGoogleButton), for: .touchUpInside)
+        faceBookSignInButton.addTarget(self, action: #selector(didTapGitHubButton), for: .touchUpInside)
     }
     
     @objc func  didTapSignUp() {
@@ -102,6 +104,7 @@ class SignUpVC: UIViewController {
         }
     }
     
+    // MARK: Google Sign In Button Function
     @objc func didTapGoogleButton() {
         
         print("google button tapped")
@@ -118,9 +121,24 @@ class SignUpVC: UIViewController {
         }
     }
     
+    // MARK: Sign In Button Function
     @objc func didTapSignIn() {
         //        self.navigationController?.pushViewController(SignInVC(), animated: false)
         self.navigationController?.popToRootViewController(animated: true) // this is used to be headed to rootViewController of navigation controller.
+    }
+    
+    
+    @objc func didTapGitHubButton() {
+        print("didtap github button")
+        viewModel.faceBookSignIn { success, error in
+            
+            if success {
+                TabBarController().setUpTabBars(vc: self)
+            }else {
+                AlertManager.showRandomAlert(vc: self)
+            }
+            
+        }
     }
     
     
@@ -155,6 +173,7 @@ class SignUpVC: UIViewController {
         self.view.addSubview(signInButton)
         self.view.addSubview(textView1)
         self.view.addSubview(signInGoogle)
+        self.view.addSubview(faceBookSignInButton)
         
         
         authView.translatesAutoresizingMaskIntoConstraints = false
@@ -165,6 +184,7 @@ class SignUpVC: UIViewController {
         signInButton.translatesAutoresizingMaskIntoConstraints = false
         textView1.translatesAutoresizingMaskIntoConstraints = false
         signInGoogle.translatesAutoresizingMaskIntoConstraints = false
+        faceBookSignInButton.translatesAutoresizingMaskIntoConstraints = false
         
         
         NSLayoutConstraint.activate([
@@ -211,7 +231,12 @@ class SignUpVC: UIViewController {
             signInGoogle.centerXAnchor.constraint(equalTo: self.view.centerXAnchor),
             signInGoogle.topAnchor.constraint(equalTo: self.textView1.bottomAnchor, constant: 60),
             signInGoogle.widthAnchor.constraint(equalTo: self.view.widthAnchor, multiplier: 0.6),
-            signInGoogle.heightAnchor.constraint(equalTo: self.view.heightAnchor, multiplier: 0.06)
+            signInGoogle.heightAnchor.constraint(equalTo: self.view.heightAnchor, multiplier: 0.06),
+            
+            faceBookSignInButton.centerXAnchor.constraint(equalTo: self.view.centerXAnchor),
+            faceBookSignInButton.centerYAnchor.constraint(equalTo: self.signInGoogle.bottomAnchor, constant: 60),
+            faceBookSignInButton.widthAnchor.constraint(equalTo: self.view.widthAnchor, multiplier: 0.6),
+            faceBookSignInButton.heightAnchor.constraint(equalTo: self.view.heightAnchor, multiplier: 0.06)
             
         ])
     }

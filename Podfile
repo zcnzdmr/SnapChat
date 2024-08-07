@@ -9,6 +9,7 @@ pod 'FirebaseAuth'
 pod 'FirebaseFirestore'
 pod 'FirebaseStorage'
 pod "GoogleSignIn"
+pod 'FBSDKLoginKit'
 
   # Pods for SnapChat
 
