@@ -5,25 +5,28 @@
 	<key>CFBundleURLTypes</key>
 	<array>
 		<dict>
-			<key>CFBundleTypeRole</key>
-			<string>Editor</string>
 			<key>CFBundleURLSchemes</key>
 			<array>
 				<string>com.googleusercontent.apps.474455868613-8r033dll6hjevnu5jh69tnhb6s4hu8pj</string>
+				<string>fb917173606887689</string>
 			</array>
 		</dict>
-		<dict>
-			<key>CFBundleTypeRole</key>
-			<string>Editor</string>
-			<key>CFBundleURLSchemes</key>
-			<array/>
-		</dict>
-		<dict/>
 	</array>
 	<key>NSAppTransportSecurity</key>
 	<dict>
 		<key>NSAllowsArbitraryLoads</key>
 		<true/>
 	</dict>
+	<key>FacebookAppID</key>
+	<string>917173606887689</string>
+	<key>FacebookClientToken</key>
+	<string>fe040edd65f47ba5192120ae647b3e6f</string>
+	<key>FacebookDisplayName</key>
+	<string>SnapChat-X</string>
+	<key>LSApplicationQueriesSchemes</key>
+	<array>
+		<string>fbapi</string>
+		<string>fb-messenger-share-api</string>
+	</array>
 </dict>
 </plist>
