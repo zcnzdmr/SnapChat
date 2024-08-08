@@ -9,6 +9,7 @@ import UIKit
 import FirebaseAuth
 import GoogleSignIn
 import FirebaseCore
+import FBSDKLoginKit
 
 
 class SignUpVC: UIViewController {
@@ -37,7 +38,7 @@ class SignUpVC: UIViewController {
     private let signUpButton = CustomButton(title: "Sign Up", buttonType: .big,hasbackground: true)
     private let signInButton = CustomButton(title: "Already have an account? Sign In.", buttonType: .medium)
     private let signInGoogle = GIDSignInButton()
-    private let faceBookSignInButton = CustomButton(title: "GitHub", buttonType: .medium, hasbackground: true)
+    private let faceBookSignInButton = FBLoginButton()
     
     
     //    override func loadView() {
@@ -60,7 +61,7 @@ class SignUpVC: UIViewController {
         signUpButton.addTarget(self, action: #selector(didTapSignUp), for: .touchUpInside)
         signInButton.addTarget(self, action: #selector(didTapSignIn), for: .touchUpInside)
         signInGoogle.addTarget(self, action: #selector(didTapGoogleButton), for: .touchUpInside)
-        faceBookSignInButton.addTarget(self, action: #selector(didTapGitHubButton), for: .touchUpInside)
+        faceBookSignInButton.addTarget(self, action: #selector(didTapFacebookButton), for: .touchUpInside)
     }
     
     @objc func  didTapSignUp() {
@@ -128,17 +129,16 @@ class SignUpVC: UIViewController {
     }
     
     
-    @objc func didTapGitHubButton() {
+    @objc func didTapFacebookButton() {
         print("didtap github button")
-        viewModel.faceBookSignIn { success, error in
-            
-            if success {
-                TabBarController().setUpTabBars(vc: self)
-            }else {
-                AlertManager.showRandomAlert(vc: self)
-            }
-            
-        }
+//        viewModel.faceBookSignIn { success, error in
+//            
+//            if success {
+//                TabBarController().setUpTabBars(vc: self)
+//            }else {
+//                AlertManager.showRandomAlert(vc: self)
+//            } 
+//        }
     }
     
     
