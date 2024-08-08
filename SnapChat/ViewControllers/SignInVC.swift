@@ -86,13 +86,8 @@ class SignInVC: UIViewController {
                             AlertManager.showRegistrationError(vc: self, error: error)
                         }
                     }
-                    
                 }
-                
-                
             }
-            
-
         }
     }
     

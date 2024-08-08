@@ -118,7 +118,6 @@ class SignUpVC: UIViewController {
             }else{
                 AlertManager.showRandomAlert(vc: self)
             }
-            
         }
     }
     
@@ -130,6 +129,7 @@ class SignUpVC: UIViewController {
     
     
     @objc func didTapFacebookButton() {
+        
         print("didtap github button")
 //        viewModel.faceBookSignIn { success, error in
 //            
@@ -137,7 +137,7 @@ class SignUpVC: UIViewController {
 //                TabBarController().setUpTabBars(vc: self)
 //            }else {
 //                AlertManager.showRandomAlert(vc: self)
-//            } 
+//            }
 //        }
     }
     
@@ -229,14 +229,14 @@ class SignUpVC: UIViewController {
             textView1.heightAnchor.constraint(equalTo: self.view.heightAnchor, multiplier: 0.06),
          
             signInGoogle.centerXAnchor.constraint(equalTo: self.view.centerXAnchor),
-            signInGoogle.topAnchor.constraint(equalTo: self.textView1.bottomAnchor, constant: 60),
-            signInGoogle.widthAnchor.constraint(equalTo: self.view.widthAnchor, multiplier: 0.6),
+            signInGoogle.topAnchor.constraint(equalTo: self.textView1.bottomAnchor, constant: 90),
+            signInGoogle.widthAnchor.constraint(equalTo: self.view.widthAnchor, multiplier: 0.75),
             signInGoogle.heightAnchor.constraint(equalTo: self.view.heightAnchor, multiplier: 0.06),
             
             faceBookSignInButton.centerXAnchor.constraint(equalTo: self.view.centerXAnchor),
-            faceBookSignInButton.centerYAnchor.constraint(equalTo: self.signInGoogle.bottomAnchor, constant: 60),
-            faceBookSignInButton.widthAnchor.constraint(equalTo: self.view.widthAnchor, multiplier: 0.6),
-            faceBookSignInButton.heightAnchor.constraint(equalTo: self.view.heightAnchor, multiplier: 0.06)
+            faceBookSignInButton.centerYAnchor.constraint(equalTo: self.signInGoogle.bottomAnchor, constant: 40),
+            faceBookSignInButton.widthAnchor.constraint(equalTo: self.view.widthAnchor, multiplier: 0.75),
+            faceBookSignInButton.heightAnchor.constraint(equalTo: self.view.heightAnchor, multiplier: 0.056)
             
         ])
     }
