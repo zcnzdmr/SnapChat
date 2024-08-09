@@ -9,7 +9,7 @@ import UIKit
 
 class FirstTableViewCell: UITableViewCell {
 
-    static let identifier = "FirstCell"
+    static let identifier = "FirstTableViewCell"
     
     var image: UIImageView = {
         

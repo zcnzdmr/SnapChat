@@ -31,6 +31,8 @@
 		F58ADC0E2C57BE3800F77808 /* TermsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F58ADC0D2C57BE3800F77808 /* TermsVC.swift */; };
 		F58ADC102C57CA5F00F77808 /* PrivacyVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F58ADC0F2C57CA5F00F77808 /* PrivacyVC.swift */; };
 		F59213552C6638AD00D6DF4E /* FirstTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F59213542C6638AD00D6DF4E /* FirstTableViewCell.swift */; };
+		F59213572C664EB100D6DF4E /* CollectViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F59213562C664EB100D6DF4E /* CollectViewController.swift */; };
+		F59213592C6651CF00D6DF4E /* CollectViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F59213582C6651CF00D6DF4E /* CollectViewCell.swift */; };
 		F5D2B82A2C5A2D90006BFCCC /* AlertManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5D2B8292C5A2D90006BFCCC /* AlertManager.swift */; };
 		F5DE253A2C60C4F9002DE6EA /* SignInVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5DE25392C60C4F9002DE6EA /* SignInVM.swift */; };
 		F5DE253C2C60F130002DE6EA /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = F5DE253B2C60F130002DE6EA /* GoogleService-Info.plist */; };
@@ -66,6 +68,8 @@
 		F58ADC0D2C57BE3800F77808 /* TermsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TermsVC.swift; sourceTree = "<group>"; };
 		F58ADC0F2C57CA5F00F77808 /* PrivacyVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrivacyVC.swift; sourceTree = "<group>"; };
 		F59213542C6638AD00D6DF4E /* FirstTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstTableViewCell.swift; sourceTree = "<group>"; };
+		F59213562C664EB100D6DF4E /* CollectViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectViewController.swift; sourceTree = "<group>"; };
+		F59213582C6651CF00D6DF4E /* CollectViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectViewCell.swift; sourceTree = "<group>"; };
 		F5D2B8292C5A2D90006BFCCC /* AlertManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertManager.swift; sourceTree = "<group>"; };
 		F5DE25392C60C4F9002DE6EA /* SignInVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInVM.swift; sourceTree = "<group>"; };
 		F5DE253B2C60F130002DE6EA /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
@@ -187,6 +191,7 @@
 			isa = PBXGroup;
 			children = (
 				F59213542C6638AD00D6DF4E /* FirstTableViewCell.swift */,
+				F59213582C6651CF00D6DF4E /* CollectViewCell.swift */,
 			);
 			path = Cell;
 			sourceTree = "<group>";
@@ -200,6 +205,7 @@
 				9ADAE68D2C568CF800D6B7E9 /* ForgotVC.swift */,
 				F58ADC0D2C57BE3800F77808 /* TermsVC.swift */,
 				F58ADC0F2C57CA5F00F77808 /* PrivacyVC.swift */,
+				F59213562C664EB100D6DF4E /* CollectViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -330,9 +336,11 @@
 				F58ADC102C57CA5F00F77808 /* PrivacyVC.swift in Sources */,
 				F5F0F7092C6246FD0035FCB6 /* FifthVM.swift in Sources */,
 				9ADAE6902C568DD900D6B7E9 /* AuthHeaderView.swift in Sources */,
+				F59213572C664EB100D6DF4E /* CollectViewController.swift in Sources */,
 				F5606C012C5B76490019DE80 /* Repo.swift in Sources */,
 				9ADAE6852C5689F700D6B7E9 /* SignInVC.swift in Sources */,
 				F5606C102C5BC2860019DE80 /* FourthVC.swift in Sources */,
+				F59213592C6651CF00D6DF4E /* CollectViewCell.swift in Sources */,
 				F5DE253A2C60C4F9002DE6EA /* SignInVM.swift in Sources */,
 				9ADAE68C2C568B3300D6B7E9 /* CustomButton.swift in Sources */,
 				F5D2B82A2C5A2D90006BFCCC /* AlertManager.swift in Sources */,

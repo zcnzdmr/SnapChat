@@ -25,14 +25,12 @@ class FirstVC: UIViewController {
         tableView.delegate = self
         tableView.dataSource = self
         tableView.frame = view.bounds
-        tableView.backgroundColor = .systemCyan
+        tableView.backgroundColor = .secondarySystemBackground
         tableView.translatesAutoresizingMaskIntoConstraints = false
-        tableView.rowHeight = CGFloat(320)
+        tableView.rowHeight = CGFloat(360)
         tableView.register(FirstTableViewCell.self, forCellReuseIdentifier: FirstTableViewCell.identifier)
         view.addSubview(tableView)
     }
-    
-    
 }
 
 extension FirstVC : UITableViewDelegate,UITableViewDataSource {
@@ -51,6 +49,12 @@ extension FirstVC : UITableViewDelegate,UITableViewDataSource {
         
         return cell
     }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true)
+        self.navigationController?.present(CollectViewController(), animated: true)
+    }
+    
     
     
 }
