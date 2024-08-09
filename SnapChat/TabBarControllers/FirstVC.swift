@@ -15,9 +15,10 @@ class FirstVC: UIViewController {
         super.viewDidLoad()
 
         view.backgroundColor = .systemBackground
-        self.tabBarController?.tabBar.backgroundColor = .black.withAlphaComponent(0.8) // determines the background color of tabBar
         setUpTableViewUIs()
         self.navigationItem.title = "Home Page"
+        self.tabBarController?.tabBar.backgroundColor = .black.withAlphaComponent(0.8) // determines the background color of tabBar
+
     }
     
     private func setUpTableViewUIs() {
@@ -25,9 +26,9 @@ class FirstVC: UIViewController {
         tableView.delegate = self
         tableView.dataSource = self
         tableView.frame = view.bounds
-        tableView.backgroundColor = .secondarySystemBackground
+//        tableView.backgroundColor = .secondarySystemBackground
         tableView.translatesAutoresizingMaskIntoConstraints = false
-        tableView.rowHeight = CGFloat(360)
+        tableView.rowHeight = CGFloat(300)
         tableView.register(FirstTableViewCell.self, forCellReuseIdentifier: FirstTableViewCell.identifier)
         view.addSubview(tableView)
     }
@@ -52,9 +53,8 @@ extension FirstVC : UITableViewDelegate,UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
+//        self.navigationController?.modalPresentationStyle = .fullScreen
         self.navigationController?.present(CollectViewController(), animated: true)
     }
-    
-    
-    
+
 }
