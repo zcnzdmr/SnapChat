@@ -97,7 +97,9 @@ class SignInVC: UIViewController {
     }
     
     @objc func didTapForgotPassword() {
-        self.navigationController?.pushViewController(ForgotVC(), animated: true)
+        let tabbar = TabBarController()
+        tabbar.setUpTabBars(vc: self)
+//        self.navigationController?.pushViewController(ForgotVC(), animated: true)
     }
     
     

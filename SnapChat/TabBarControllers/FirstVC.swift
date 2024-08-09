@@ -8,15 +8,49 @@
 import UIKit
 
 class FirstVC: UIViewController {
+    
+    private var tableView = UITableView()
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
         view.backgroundColor = .systemBackground
         self.tabBarController?.tabBar.backgroundColor = .black.withAlphaComponent(0.8) // determines the background color of tabBar
+        setUpTableViewUIs()
+        self.navigationItem.title = "Home Page"
     }
     
-    private func setUpUIs() {
+    private func setUpTableViewUIs() {
         
+        tableView.delegate = self
+        tableView.dataSource = self
+        tableView.frame = view.bounds
+        tableView.backgroundColor = .systemCyan
+        tableView.translatesAutoresizingMaskIntoConstraints = false
+        tableView.rowHeight = CGFloat(320)
+        tableView.register(FirstTableViewCell.self, forCellReuseIdentifier: FirstTableViewCell.identifier)
+        view.addSubview(tableView)
     }
+    
+    
+}
+
+extension FirstVC : UITableViewDelegate,UITableViewDataSource {
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return 10
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: FirstTableViewCell.identifier, for: indexPath) as? FirstTableViewCell else{
+            fatalError("TableView Cell not found")
+        }
+        
+        cell.label.text = "deneme"
+        cell.image.image = UIImage(named: "cat")
+        
+        return cell
+    }
+    
+    
 }

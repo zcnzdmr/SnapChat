@@ -4,6 +4,7 @@ import GoogleSignIn
 import FirebaseCore
 import WebKit
 import FBSDKLoginKit
+import FBSDKCoreKit
 
 class Repo {
     
@@ -91,13 +92,13 @@ class Repo {
     
     func faceBookSignIn(completion: @escaping (Bool,Error?) -> Void) {
         
-        if let token = AccessToken.current,
-            !token.isExpired {
-            completion(true,nil)
-            // User is logged in, do work such as go to next view controller.
-        }else{
-            
-        }
+//        if let token = AccessToken.current,
+//            !token.isExpired {
+//            completion(true,nil)
+//            // User is logged in, do work such as go to next view controller.
+//        }else{
+//            
+//        }
     }
 }
-    
+

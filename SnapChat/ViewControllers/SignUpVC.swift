@@ -130,7 +130,8 @@ class SignUpVC: UIViewController {
     
     @objc func didTapFacebookButton() {
         
-        print("didtap github button")
+
+        print("didtap facebook button")
 //        viewModel.faceBookSignIn { success, error in
 //            
 //            if success {
