@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		9A891E1E2C6897F90073FB3D /* ThirdVCVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A891E1D2C6897F90073FB3D /* ThirdVCVM.swift */; };
 		9ADAE6712C5688ED00D6B7E9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9ADAE6702C5688ED00D6B7E9 /* AppDelegate.swift */; };
 		9ADAE6732C5688ED00D6B7E9 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9ADAE6722C5688ED00D6B7E9 /* SceneDelegate.swift */; };
 		9ADAE6752C5688ED00D6B7E9 /* HomePage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9ADAE6742C5688ED00D6B7E9 /* HomePage.swift */; };
@@ -42,6 +43,7 @@
 /* Begin PBXFileReference section */
 		2DBB81BB79A3D1302C58BE45 /* Pods_SnapChat.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SnapChat.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		9A1519532C65361300B52635 /* SnapChat.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = SnapChat.entitlements; sourceTree = "<group>"; };
+		9A891E1D2C6897F90073FB3D /* ThirdVCVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThirdVCVM.swift; sourceTree = "<group>"; };
 		9ADAE66D2C5688ED00D6B7E9 /* SnapChat.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SnapChat.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9ADAE6702C5688ED00D6B7E9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		9ADAE6722C5688ED00D6B7E9 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -161,6 +163,7 @@
 			isa = PBXGroup;
 			children = (
 				F5606BFE2C5B762C0019DE80 /* SignUpVM.swift */,
+				9A891E1D2C6897F90073FB3D /* ThirdVCVM.swift */,
 				F5DE25392C60C4F9002DE6EA /* SignInVM.swift */,
 				F5F0F7082C6246FD0035FCB6 /* FifthVM.swift */,
 			);
@@ -325,6 +328,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9A891E1E2C6897F90073FB3D /* ThirdVCVM.swift in Sources */,
 				9ADAE6752C5688ED00D6B7E9 /* HomePage.swift in Sources */,
 				F5606C0E2C5BBAD10019DE80 /* TabBars.swift in Sources */,
 				F5606BFF2C5B762C0019DE80 /* SignUpVM.swift in Sources */,
