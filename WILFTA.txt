@@ -129,17 +129,38 @@ This is the link of this lesson : https://www.youtube.com/watch?v=6h5TrAtyQi8&li
 
 
 
+	21. You learnt how to create UICollectionView and UITableView programmatically. But there are lots of details regarding them. One of them is to leave some space at the top and at the bottom with specific functions that UICollectionViewDelegate supply us. 
+
+	    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, referenceSizeForHeaderInSection section: Int) -> CGSize {
+        return CGSize(width: .... , height: ....)
+    }
+    
+	-----> this func called "referenceSizeForHeaderInSection " is used to leave a space of UICollectionView's TOP  not UIViewController. 
 
 
+	    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, referenceSizeForFooterInSection section: Int) -> CGSize {
+        return CGSize(width: 200, height: 200)
+    }
+
+		-----> this func called "referenceSizeForFooterInSection" is used to leave a space of UICollectionView' BOTTOM! not UIViewController. 
+
+	+NOTE: Those two functions are very similar with "layout.sectionInset = UIEdgeInsets(top: 200, left: 0, bottom: 200, right: 0)" code because top corresponds to HeaderInSectio and bottom corresponds to FooterInSection.
+
+	all of them written is within CollectViewController !
 
 
+	22. You also learnt some details about CollectionView which is a feature determining if the end of collectionView both horizontal and vertical bounce, jump when you drag by tapping. 
+
+	        collectionView.alwaysBounceHorizontal = true ----> this determines that horizontal bouncing happens since it is true
+
+       		collectionView.alwaysBounceVertical = false ----> this determines that vertical bouncing doesn't happen since it is false. 
 
 
+		two of them are in the code CollectionViewController.swift > func setUpCollectView().
 
+	23. TO show a stick attached to right edge of phone screen while you're scrolling collectionView you can use 
 
-
-
-
+collectionView.showsVerticalScrollIndicator = true -----> this code show indicator(stick) that allow you to know what way you're scrolling vertically. 
 
 
 

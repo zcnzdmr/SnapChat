@@ -25,12 +25,26 @@ class FirstVC: UIViewController {
         
         tableView.delegate = self
         tableView.dataSource = self
-        tableView.frame = view.bounds
-//        tableView.backgroundColor = .secondarySystemBackground
+        
+        tableView.backgroundColor = .secondarySystemBackground
         tableView.translatesAutoresizingMaskIntoConstraints = false
-        tableView.rowHeight = CGFloat(300)
+        tableView.rowHeight = CGFloat(500)
         tableView.register(FirstTableViewCell.self, forCellReuseIdentifier: FirstTableViewCell.identifier)
+        
+        tableView.alwaysBounceVertical = false // block jumping or bouncing when you drag by tapping if it's false
+        tableView.alwaysBounceHorizontal = false
+        
+        tableView.showsVerticalScrollIndicator = true // show an stick that allows you to see direction you scroll
+        
         view.addSubview(tableView)
+        
+        NSLayoutConstraint.activate([
+            tableView.topAnchor.constraint(equalTo: self.view.layoutMarginsGuide.topAnchor),
+            tableView.bottomAnchor.constraint(equalTo: self.view.layoutMarginsGuide.bottomAnchor),
+            tableView.leadingAnchor.constraint(equalTo: self.view.leadingAnchor),
+            tableView.trailingAnchor.constraint(equalTo: self.view.trailingAnchor)
+            ])
+        
     }
 }
 
@@ -46,6 +60,7 @@ extension FirstVC : UITableViewDelegate,UITableViewDataSource {
         }
         
         cell.label.text = "deneme"
+        cell.image2.image = UIImage(named: "bugs")
         cell.image.image = UIImage(named: "cat")
         
         return cell

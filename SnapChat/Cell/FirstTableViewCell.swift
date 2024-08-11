@@ -8,31 +8,45 @@
 import UIKit
 
 class FirstTableViewCell: UITableViewCell {
-
+    
     static let identifier = "FirstTableViewCell"
     
     var image: UIImageView = {
         
         let iv = UIImageView()
-//        iv.contentMode = .scaleAspectFill
+        //        iv.contentMode = .scaleAspectFill
         iv.translatesAutoresizingMaskIntoConstraints = false
         iv.clipsToBounds = true
-        iv.layer.borderWidth = 1
+//        iv.layer.borderWidth = 1
         iv.layer.cornerRadius = 10
         return iv
     }()
-    
+
     
     var label : UILabel = {
         let label = UILabel()
-        label.layer.borderWidth = 1
-        label.textAlignment = .left
+        label.backgroundColor = .gray.withAlphaComponent(0.2)
+        label.textAlignment = .center
         label.textColor = .label
-        label.font = UIFont.systemFont(ofSize: 12, weight: .semibold)
+        label.clipsToBounds = true
+        label.font = UIFont.systemFont(ofSize: 16, weight: .semibold)
         label.layer.borderWidth = 1
-        label.layer.cornerRadius = 5
+        label.layer.cornerRadius = 11
+        label.layer.borderColor = UIColor.gray.withAlphaComponent(0.2).cgColor
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
+    }()
+    
+    
+    var image2: UIImageView = {
+        let iv2 = UIImageView()
+        //        iv.contentMode = .scaleAspectFill
+        iv2.translatesAutoresizingMaskIntoConstraints = false
+        iv2.clipsToBounds = true
+        iv2.layer.borderWidth = 1
+        iv2.layer.cornerRadius = 20
+        iv2.layer.borderColor = UIColor.lightGray.cgColor
+        return iv2
     }()
     
     
@@ -40,7 +54,7 @@ class FirstTableViewCell: UITableViewCell {
         super.awakeFromNib()
         // Initialization code
     }
-
+    
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
         
@@ -53,19 +67,27 @@ class FirstTableViewCell: UITableViewCell {
         
         self.contentView.addSubview(label)
         self.contentView.addSubview(image)
-
+        self.contentView.addSubview(image2)
+        
         
         NSLayoutConstraint.activate([
             
-            image.topAnchor.constraint(equalTo: self.contentView.layoutMarginsGuide.topAnchor, constant: 10),
-            image.leadingAnchor.constraint(equalTo: self.contentView.layoutMarginsGuide.leadingAnchor, constant: 10),
-            image.widthAnchor.constraint(equalTo: self.contentView.layoutMarginsGuide.widthAnchor, multiplier: 0.95),
-            image.heightAnchor.constraint(equalTo: self.contentView.layoutMarginsGuide.heightAnchor, multiplier: 0.5),
+            image.topAnchor.constraint(equalTo: self.contentView.layoutMarginsGuide.topAnchor, constant: 45),
+            image.centerXAnchor.constraint(equalTo: self.contentView.centerXAnchor),
+            image.widthAnchor.constraint(equalTo: self.contentView.layoutMarginsGuide.widthAnchor),
+            image.bottomAnchor.constraint(equalTo: self.contentView.bottomAnchor, constant: -5),
             
-            label.topAnchor.constraint(equalTo: self.image.bottomAnchor, constant: 20),
-            label.leadingAnchor.constraint(equalTo: self.contentView.layoutMarginsGuide.leadingAnchor, constant: 10),
-            label.widthAnchor.constraint(equalTo: self.contentView.layoutMarginsGuide.widthAnchor, multiplier: 0.85),
-            label.heightAnchor.constraint(equalTo: self.contentView.layoutMarginsGuide.heightAnchor, multiplier: 0.08)
+            label.topAnchor.constraint(equalTo: self.contentView.topAnchor, constant: 5),
+            label.centerXAnchor.constraint(equalTo: self.contentView.centerXAnchor),
+            label.widthAnchor.constraint(equalTo: self.contentView.layoutMarginsGuide.widthAnchor),
+            label.heightAnchor.constraint(equalTo: self.contentView.layoutMarginsGuide.heightAnchor, multiplier: 0.08),
+            
+            
+            image2.topAnchor.constraint(equalTo: self.contentView.topAnchor, constant: 5),
+            image2.leadingAnchor.constraint(equalTo: self.contentView.leadingAnchor, constant: 10),
+            image2.heightAnchor.constraint(equalToConstant: 40),
+            image2.widthAnchor.constraint(equalToConstant: 40)
+            
         ])
     }
 }
